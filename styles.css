@@ -1,0 +1,54 @@
+:root {
+    --dark1: #001312;
+    --dark2: #131200;
+    --dark3: #120013;
+    --light1: #00ACAB;
+    --light2: #ACAB00;
+    --light3: #AB00AC;
+    --null: #131213;
+}
+
+body {
+    background-color: var(--null);
+    font-family: "Consolas";
+    margin: 0px
+}
+
+header {
+    display: flex;
+    text-align: center;
+
+}
+
+h1 {
+    flex: 1;
+    font-size: 6vw;
+}
+
+
+.colours1 {
+    background-color: var(--dark1);
+    color: var(--light2);
+}
+.colours2 {
+    background-color: var(--dark2);
+    color: var(--light3);
+}
+
+.colours3 {
+    background-color: var(--dark3);
+    color: var(--light1);
+}
+
+.logo {
+    max-width: 15%;
+    margin: 2%
+}
+
+@media only screen and (min-width: 1000px) {
+    header {
+        padding-left: 5%;
+        padding-right: 0%;
+        line-height: 800%;
+    }
+}
