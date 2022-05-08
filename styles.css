@@ -8,24 +8,19 @@
     --null: #131213;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-weight: normal;
+}   
+
 body {
     background-color: var(--null);
     font-family: "Consolas";
     margin: 0px
-}
-
-header {
-    display: flex;
-    text-align: center;
-
-}
-
-h1 {
-    flex: 1;
-    font-size: 6vw;
-}
-main {
-    color: white;
 }
 
 .colours1 {
@@ -42,15 +37,99 @@ main {
     color: var(--light1);
 }
 
-.logo {
-    max-width: 15%;
-    margin: 2%
+main {
+    color: white;
 }
 
-@media only screen and (min-width: 1000px) {
+input[type=checkbox]{
+    display: none;
+}
+
+/* ----- Styles For Mobile ----- */ 
+
+header {
+    width: 100%;
+    height: calc(30vw);
+}
+
+nav ul{
+    display: none;
+    max-width: calc(200px + 1.5vw);
+    font-size: calc(20px + 1.5vw);
+}
+
+nav ul li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+nav ul li a:any-link {
+    color: var(--light3);
+}
+
+nav ul li a:hover {
+    color: var(--light1);
+}
+
+input[type=checkbox]:checked ~ ul {
+    display: block
+}
+
+.logo {
+    max-width: 20%;
+    margin: 2%;
+    margin-top: 5vw;
+}
+
+nav {
+    position: absolute;
+}
+
+
+h1 {
+    font-size: calc(9px + 5vw);
+    padding: calc(12px + 8vw) 6vw 0px 0px;
+    text-align: end;
+}
+
+
+
+/* ----- Styles For Desktop ----- */ 
+
+@media only screen and (min-width: 860px) {
+    .dropdown {
+        display: flex;
+
+    }
+
     header {
-        padding-left: 5%;
-        padding-right: 0%;
-        line-height: 800%;
+        height: calc(14vw);
+    }
+    
+    nav ul{
+        display: flex;
+        max-width: 100%;
+        font-size: calc(15px + 1vw);
+        height: 0px;
+        justify-content: space-around;
+        width: 76vw;
+        float: right;
+    }
+    
+    input[type=checkbox]:checked ~ ul {
+        display: flex;
+    }
+
+    .logo {
+        max-width: 10vw;
+        margin: 2vw;
+    }
+    
+    h1 {
+        font-size: calc(9px + 3vw);
+        padding: calc(12px + 6vw) 0px 0px 0px;
+        text-align: center;
     }
 }
+
+
