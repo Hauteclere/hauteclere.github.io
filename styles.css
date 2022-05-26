@@ -229,10 +229,8 @@ hr {
 
 a {
     color: var(--light3);
-    text-decoration: underline;
 }
 
 a:hover {
     color: var(--light1);
-    text-decoration: none;
 }
