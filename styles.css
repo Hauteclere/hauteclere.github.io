@@ -8,7 +8,6 @@
     --mild1: #acabff;
     --mild2: #ffacab;
     --mild3: #abffac;
-
     --null: #131213;
 }
 
@@ -16,7 +15,6 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
     font-weight: normal;
 }   
@@ -60,6 +58,7 @@ nav ul{
     display: none;
     max-width: calc(200px + 1.5vw);
     font-size: calc(20px + 1.5vw);
+    list-style: none;
 }
 
 nav ul li {
@@ -138,6 +137,34 @@ h1 {
 
 /* CV STYLES: */
 
+
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.container section {
+    margin: 20px 0px 0px 0px;
+    width: 49%;
+}
+
+.container #contact {
+    width: 70%;
+} 
+
+.container img {
+    margin-top: 20px;
+}
+
+.container #centered_image {
+    display: flex;
+    width: 49%;
+    justify-content: center;    
+}
+
+
 .cv_section {
     background-color: ghostwhite;
     color: var(--dark1);
@@ -148,22 +175,50 @@ h1 {
     max-width: 800px;
 }
 
+.cv_section h2, h3, h4 {
+    color: var(--light3);
+}
+
 .cv_section h2 {
-    color: var(--light3);
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.cv_section h3 {
-    color: var(--light3);
-}
-
-.cv_section h4 {
-    color: var(--light3);
-}
 
 .cv_section p {
     margin: 10px 0px 10px 0px;
 }
 
+.cv_section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.cv_image {
+    border-radius: 50%;
+    width: 200px;
+}
+
 hr {
     margin-bottom: 10px;
+}
+
+#interests p {
+    text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .cv_image {
+        display: none;
+    }
+
+    .cv_section {
+        min-width: 100%;
+    }
+
 }
