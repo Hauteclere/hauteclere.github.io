@@ -2,7 +2,6 @@ import { useState, useEffect,} from "react";
 import { Link, useLocation, } from "react-router-dom";
 import styled from "styled-components";
 import { ColourScheme } from "../assets/colours"; 
-import ProjectsPage from "../pages/Projects";
 
 type NavbarProps = {
     extend: boolean;
@@ -10,16 +9,29 @@ type NavbarProps = {
 
 const NavbarContainer = styled("nav")<NavbarProps>`
     width: 100%;
-    height:${(props)=>(props.extend? "100vh": "70px")};
+    height:${(props)=>(props.extend ? "100vh": "70px")};
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: ${ColourScheme.dark3};
-    @media(min-width:700px){
-        height: 60px;
+    @media(min-width:701px){
+        height: 12vw;
+    }
+    @media(max-width:700px){
+        position: absolute;
+        padding-top: 2vw;
+        padding-left: 2vw;
+        width: ${(props)=>(props.extend ? "100vw" : "50px;")};
+        min-width: ${(props)=>(props.extend ? "180px" : "55px")};
     }
 `
 const NavbarLinkContainer = styled.div`
     display: flex;
+    width: 86vw;
+    justify-content: space-around;
+    align-items: top;
+    @media(max-width: 700px) {
+        display: none;
+    };
 `
 
 const NavbarLink = styled(Link)`
@@ -34,6 +46,20 @@ const NavbarLink = styled(Link)`
     }
     @media(max-width: 700px) {
         display: none;
+    };
+    @media(max-width: 900px) {
+        font-size: large;
+    };
+`
+
+const NavbarImg = styled("img")`
+    padding: 1vw;
+    width: 12vw;
+    height: 12vw;
+    @media(max-width: 700px) {
+        display: none;
+        width: 0vw;
+        height: 0vw;
     };
 `
 
@@ -52,7 +78,7 @@ const ButtonLink = styled("button")<NavbarProps>`
     border: none;
     font-size: 45px;
     cursor: pointer;
-    @media(min-width: 700px) {
+    @media(min-width: 701px) {
         display: none;
     };
     font-size: medium;
@@ -60,22 +86,25 @@ const ButtonLink = styled("button")<NavbarProps>`
     flex-direction: column;
     align-items: end;
     justify-content: center;
-    
 `
 const ButtonText = styled("p")`
     background-color: ${ColourScheme.dark3};
     color: ${ColourScheme.light1};
     width: 50px;
     height: 20px;
+    border-color: ${ColourScheme.dark3};
+    border-width: 1px;
+    border-style: solid;
 `
 
 const ExtendedNavbar = styled("div")`
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media (min-width:700px){
+    width: 100vw;
+    @media (min-width:701px){
         display: none;
-}
+    }
 `
 
 const NavbarLinkExtended= styled(Link)`
@@ -101,17 +130,18 @@ const Navbar: React.FC<NavbarProps> = props => {
 
     return (
         <NavbarContainer extend={extendNavbar}>
+            <ButtonLink extend={extendNavbar} onClick={()=>{setExtendNavbar((curr)=> !curr)}} ><ButtonImage src="src/assets/logo1/logo1.png" extend={extendNavbar} /><ButtonText>Menu</ButtonText></ButtonLink>
+            <NavbarImg src="src/assets/logo1/logo1.png"/>
             <NavbarLinkContainer>
-                <NavbarLink className="nav-link active" to="/">About Me</NavbarLink>
-                <NavbarLink className="nav-link" to="/projects">Projects</NavbarLink>
-                <NavbarLink className="nav-link" to="/cv">Curriculum Vitae</NavbarLink>
-                <ButtonLink extend={extendNavbar} onClick={()=>{setExtendNavbar((curr)=>!curr)}} ><ButtonImage src="src/assets/logo1/logo1.png" extend={extendNavbar} /><ButtonText>Menu</ButtonText></ButtonLink>
+                    <NavbarLink className="nav-link active" to="/">Home</NavbarLink>
+                    <NavbarLink className="nav-link" to="/projects">Projects</NavbarLink>
+                    <NavbarLink className="nav-link" to="/cv">My CV</NavbarLink>
             </NavbarLinkContainer>
             {extendNavbar && (
                 <ExtendedNavbar>
-                    <NavbarLinkExtended className="nav-link active" to="/">About Me</NavbarLinkExtended>
+                    <NavbarLinkExtended className="nav-link active" to="/">Home</NavbarLinkExtended>
                     <NavbarLinkExtended className="nav-link" to="/projects">Projects</NavbarLinkExtended>
-                    <NavbarLinkExtended className="nav-link" to="/cv">Curriculum Vitae</NavbarLinkExtended>
+                    <NavbarLinkExtended className="nav-link" to="/cv">My CV</NavbarLinkExtended>
                 </ExtendedNavbar>
             )}
         </NavbarContainer>
