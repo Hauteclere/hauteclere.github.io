@@ -6,8 +6,8 @@ const StyledSectionContainer = styled('div')`
     flex-direction: row;
     margin: auto;
     margin-top: 20px;
-    max-width: 800px;
-    @media(max-width:840px){
+    max-width: 1200px;
+    @media(max-width:1240px){
         margin-left: 20px;
         margin-right: 20px;
     } 

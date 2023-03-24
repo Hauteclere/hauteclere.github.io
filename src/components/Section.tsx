@@ -6,13 +6,6 @@ const StyledSection = styled('section')`
     color: ${ColourScheme.dark1};
     border-radius: 10px;
     padding: 20px;
-    /* margin: auto;
-    margin-top: 20px;
-    padding: 20px;
-    max-width: 800px;
-    @media(max-width:840px){
-        margin-left: 20px;
-        margin-right: 20px;
-    }  */
+    width: 100%;
 `
 export default StyledSection;

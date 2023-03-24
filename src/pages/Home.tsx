@@ -2,6 +2,7 @@ import MainHeading from "../components/MainHeading";
 import StyledBody from "../components/PageBody";
 import StyledSection from "../components/Section";
 import StyledSectionContainer from "../components/SectionContainer";
+import StyledSubHeading from "../components/SubHeading";
 
 export interface HomePageProps {}
 
@@ -11,7 +12,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             <MainHeading text="About Me"></MainHeading>
             <StyledSectionContainer>
                 <StyledSection>
-                    <h2>Hi!</h2>
+                    <StyledSubHeading>Hi!</StyledSubHeading>
                     <br />
                     <p>I'm Oliver.</p>
                     <br />
@@ -21,7 +22,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <h2>Look At Me Go</h2>
+                    <StyledSubHeading>Look At Me Go</StyledSubHeading>
                     <br />
                     <p>Here I am doing stuff.</p>
                     <br />
@@ -29,9 +30,9 @@ const HomePage: React.FC<HomePageProps> = props => {
             </StyledSectionContainer> 
             <StyledSectionContainer>
                 <StyledSection>
-                    <h2>Tragically Born Without Gorm</h2>
+                    <StyledSubHeading>Tragically Born Without Gorm</StyledSubHeading>
                     <br />
-                    <p>Just because I'm good at a lot of things doesn't mean I'm photogenic.</p>
+                    <p>But I'm friendly and I make an effort.</p>
                     <br />
                 </StyledSection>
             </StyledSectionContainer> 

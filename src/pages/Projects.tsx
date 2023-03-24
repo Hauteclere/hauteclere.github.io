@@ -3,8 +3,103 @@ import StyledBody from "../components/PageBody";
 import StyledSection from "../components/Section";
 import StyledSectionContainer from "../components/SectionContainer";
 import StytledUL from "../components/StyledUL";
+import StyledSubHeading from "../components/SubHeading";
+import StyledPara from "../components/StyledPara";
+import StyledCodeContent from "../components/StyledCodeBlock";
+import SideBySide from "../components/SideBySide";
 
 export interface ProjectsPageProps {}
+
+const reactCode = `
+/* ---------------------------------------------
+ShoppingList.tsx 
+--------------------------------------------- */
+
+type ShoppingItemProps = { itemName: string; };
+
+const ShoppingItem: React.FC<ShoppingItemProps> = props => {
+    return (
+        <li>{props.itemName}</li>
+    )
+}
+
+type ShoppingListProps = { listItems: string[]; listName: string; };
+
+const ShoppingList: React.FC<ShoppingListProps> = props => {
+    return (
+        <div>
+            <h1>{props.listName}</h1>
+            <ul>
+                {props.listItems.map((item: string)=> (<ShoppingItem itemName={item}/>))}
+            </ul>
+        </div>
+    )
+}
+
+export default ShoppingList;
+
+
+
+/* ---------------------------------------------
+App.tsx 
+--------------------------------------------- */
+
+import ShoppingList from "../components/ShoppingList";
+
+/* ... */
+
+<ShoppingList listName="My List" listItems={["beans", "rice", "hotsauce"]}/>
+
+/* ... */
+`
+
+const pythonCode = `
+# ----------------------------------------------
+# main.py
+# ----------------------------------------------
+
+from Phractal import Phraction, ValidatedCachedProperty
+
+class ListItem(Phraction):
+    template = "<li>{{ item }}</li>"
+    item: str
+
+class ShoppingList(Phraction):
+    template = '''
+        <div>
+            <h1>{{ list_name }}</h1>
+            <ul>
+                {% for item in list_items %}
+                    {{ item }}
+                {% endfor %}
+            </ul>
+        </div>
+    '''
+
+    list_name: str
+    items: list[str]    
+
+    @ValidatedCachedProperty
+    def list_items(self):
+        return [
+            ListItem(
+                item=item_name
+            ) for item_name in self.items
+        ]
+
+print(ShoppingList(list_name="My List", items=["beans", "rice", "hotsauce"]))
+`
+
+const htmlCode = `
+<div>
+    <h1>My List</h1>
+    <ul>
+        <li>beans</li>
+        <li>rice</li>
+        <li>hotsauce</li>
+    </ul>
+</div>
+`
 
 const ProjectsPage: React.FC<ProjectsPageProps> = props => {
     return (
@@ -12,49 +107,50 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
             <MainHeading text="My Work"></MainHeading>
             <StyledSectionContainer>
                 <StyledSection>
-                    <h2>Phractal</h2>
+                    <StyledSubHeading>Phractal</StyledSubHeading>
+                    <br/>
                     <StytledUL>
-                        <li><a href="https://pypi.org/project/Phractal/">Pypi</a></li>
-                        <li><a href="https://github.com/Hauteclere/phractal/">GitHub</a></li>
+                        <li><i className="fa fa-link"></i> <a href="https://pypi.org/project/Phractal/">Pypi</a></li>
+                        <li><i className="fa fa-github"></i> <a href="https://github.com/Hauteclere/phractal/">GitHub</a></li>
                     </StytledUL>
-                    <br/>
-                    <p> 
-                        Phractal is a tool for creating documents programmatically with Python, powered by <a href="https://docs.pydantic.dev/">Pydantic</a> and <a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja2</a>. 
-                    </p>
-                    <br/>
-                    <p>
-                        Phractal solves the complexity that can arise when templating complex documents in Python by using <i>nesting</i>. Hence the name; a Phractal document is a fractal arrangement of simple components nested inside one another. 
-                    </p>
-                    <br/>
-                    <p>    
-                        Phractal is inspired by React.js's component-driven development style, with the additional utility of Typescript-like, Pydantic-enforced type-checking before the page is rendered, making debugging a breeze!
-                    </p>
-                    <br/>
-                    <p>
-                        In addition to building your own pages from the ground up, any package that produces HTML output can be integrated into your Phractal documents. For example, Plotly graphs can be inserted into your components with just a few lines of code.
-                    </p>
-                    <br/>
-                    <p>
-                        Phractal was originally designed to automatically generate bespoke templated statistical reports in the style of <a href="https://pypi.org/project/pandas-profiling/">pandas-profiling</a>. This is just the tip of the iceberg, though: anywhere you need to generate a document programmatically, Phractal is useful. Try creating invoices with it!
-                    </p>
-                    <br/>
+                    <StyledPara> 
+                        Phractal is a tool for creating documents programmatically with Python, powered by <a href="https://docs.pydantic.dev/">Pydantic</a> and <a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja2</a>. It is designed, built, packaged and distributed by yours truly.
+                    </StyledPara>
+                    <StyledPara>
+                        I created Phractal because I needed a faster way of generating data quality reports for my work as a data analyst. Often I would be handed a table with hundreds of columns, and asked to create a PDF summarising the same six metrics for each variable.
+                    </StyledPara>
+                    <StyledPara>    
+                        <a href="https://pypi.org/project/pandas-profiling/">Pandas-profiling</a> wasn't cutting it, and building documents manually in the Office suite was taking me longer than the analysis itself. Jinja2 would let me write HTML documents, but I needed more power! 
+                    </StyledPara>
+                    <StyledPara>
+                        I was dreaming of a Python library that gave me the component-driven development style and type-checking that I was used to from React+Typescript on the front-end. Phractal is the realisation of that dream.
+                    </StyledPara>
+                    <StyledPara>
+                        Behold: a side-by-side of Phractal and Typescript/React:
+                        <SideBySide>
+                            <StyledCodeContent titleText="Python" codeContent={pythonCode} />
+                            <StyledCodeContent titleText="React" codeContent={reactCode} />
+                        </SideBySide>
+                        And the output of both:
+                        <StyledCodeContent titleText="Output" codeContent={htmlCode} />
+                    </StyledPara>
                 </StyledSection>
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <h2>Data Analysis</h2>
+                    <StyledSubHeading>Data Analysis</StyledSubHeading>
                     I work full-time as a data analyst.
                 </StyledSection>
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <h2>Web Development</h2>
+                    <StyledSubHeading>Web Development</StyledSubHeading>
                     I'm a full-stack dev with five years experience.
                 </StyledSection>
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <h2>She Codes</h2>
+                    <StyledSubHeading>She Codes</StyledSubHeading>
                     I am a mentor.
                 </StyledSection>
             </StyledSectionContainer>
