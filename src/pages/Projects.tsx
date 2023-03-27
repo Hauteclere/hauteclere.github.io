@@ -81,7 +81,7 @@ class ShoppingList(Phraction):
     items: list[str]    
 
     @ValidatedCachedProperty
-    def list_items(self):
+    def list_items(self) -> list[ListItem]:
         return [
             ListItem(
                 item=item_name
@@ -135,12 +135,12 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
                     <StyledPara>
                         Behold: a side-by-side of Phractal vs Typescript/React...
                     </StyledPara>
-                    <SideBySide>
+                    <SideBySide reverse={false}>
                         <StyledCodeContent titletext="Python" language="python" codecontent={pythonCode} />
                         <StyledCodeContent titletext="React" language="react" codecontent={reactCode} />
                     </SideBySide>
                     And the output of both:
-                    <SideBySide>
+                    <SideBySide reverse={false}>
                     <StyledCodeContent titletext="HTML" language="html" codecontent={htmlCode} />
                     <StyledOutputBlock>
                         <h1>My List</h1>
