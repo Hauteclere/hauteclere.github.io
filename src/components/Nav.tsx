@@ -130,8 +130,8 @@ const Navbar: React.FC<NavbarProps> = props => {
 
     return (
         <NavbarContainer extend={extendNavbar}>
-            <ButtonLink extend={extendNavbar} onClick={()=>{setExtendNavbar((curr)=> !curr)}} ><ButtonImage src="src/assets/logo1/logo1.png" extend={extendNavbar} /><ButtonText>Menu</ButtonText></ButtonLink>
-            <NavbarImg src="src/assets/logo1/logo1.png"/>
+            <ButtonLink extend={extendNavbar} onClick={()=>{setExtendNavbar((curr)=> !curr)}} ><ButtonImage src="static/logo1/logo1.png" extend={extendNavbar} /><ButtonText>Menu</ButtonText></ButtonLink>
+            <NavbarImg src="static/logo1/logo1.png"/>
             <NavbarLinkContainer>
                     <NavbarLink className="nav-link active" to="/">Home</NavbarLink>
                     <NavbarLink className="nav-link" to="/projects">Projects</NavbarLink>
