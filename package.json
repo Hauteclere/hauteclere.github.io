@@ -1,11 +1,14 @@
 {
   "name": "hauteclere-portfolio",
+  "homepage": "https://hauteclere.github.io/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,7 +24,8 @@
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.1.0",
+    "gh-pages": "^5.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
-  }
+  }  
 }
