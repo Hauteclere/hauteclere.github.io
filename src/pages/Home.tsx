@@ -110,7 +110,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 <ThreeColumns>
                 <StyledSection>
                     <StyledSubHeading>Stargazer</StyledSubHeading>
-                    <p>Back when we were all locked down, and <a href="https://en.wikipedia.org/wiki/Starlink">Starlink</a> satellites were beginning to be launched, there was a small community of astronomers who were concerned that these new satellites might become the brightest objects in the sky, drowning out the stars. The thought of not seeing the Milky way again was horrifying to me, and I made a resolution to get outside of light pollution and see the night sky as often as I could. I've followed through, and regularly go camping/comet hunting with my friends. We took this photo of the moon! Elon Musk sucks.</p>
+                    <p>Back when we were all locked down, <a href="https://en.wikipedia.org/wiki/Starlink">Starlink</a> satellites were beginning to be launched, and there was a small community of astronomers who were concerned that these new satellites might become the brightest objects in the sky, drowning out the stars. The thought of not seeing the Milky way again was horrifying to me, and I made a resolution to get outside of light pollution and see the night sky as often as I could. I've followed through, and regularly go camping/comet hunting with my friends. We took this photo of the moon! Elon Musk sucks.</p>
                 </StyledSection>
                 </ThreeColumns>
             </SideBySide>
