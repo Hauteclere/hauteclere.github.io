@@ -7,6 +7,7 @@ import StyledSubHeading from "../components/SubHeading";
 import StyledPara from "../components/StyledPara";
 import StyledCodeContent from "../components/StyledCodeBlock";
 import SideBySide from "../components/SideBySide";
+import StyledOutputBlock from "../components/StyledOutputBlock";
 
 export interface ProjectsPageProps {}
 
@@ -88,6 +89,12 @@ class ShoppingList(Phraction):
         ]
 
 print(ShoppingList(list_name="My List", items=["beans", "rice", "hotsauce"]))
+
+
+
+
+
+
 `
 
 const htmlCode = `
@@ -120,20 +127,30 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
                         I created Phractal because I needed a faster way of generating data quality reports for my work as a data analyst. Often I would be handed a table with hundreds of columns, and asked to create a PDF summarising the same six metrics for each variable.
                     </StyledPara>
                     <StyledPara>    
-                        <a href="https://pypi.org/project/pandas-profiling/">Pandas-profiling</a> wasn't cutting it, and building documents manually in the Office suite was taking me longer than the analysis itself. Jinja2 would let me write HTML documents, but I needed more power! 
+                        <a href="https://pypi.org/project/pandas-profiling/">Pandas-profiling</a> wasn't cutting it, and building documents manually in the Office suite was taking me longer than the analysis itself. Jinja2 would let me create HTML documents that I could then convert to PDF, but this was time-consuming and fiddly. I needed more power! 
                     </StyledPara>
                     <StyledPara>
-                        I was dreaming of a Python library that gave me the component-driven development style and type-checking that I was used to from React+Typescript on the front-end. Phractal is the realisation of that dream.
+                        I was dreaming of a Python library that gave me the component-driven development style and type-checking that I was used to from React+Typescript on the front-end. Phractal is the realisation of that dream. 
                     </StyledPara>
                     <StyledPara>
-                        Behold: a side-by-side of Phractal and Typescript/React:
-                        <SideBySide>
-                            <StyledCodeContent titleText="Python" codeContent={pythonCode} />
-                            <StyledCodeContent titleText="React" codeContent={reactCode} />
-                        </SideBySide>
-                        And the output of both:
-                        <StyledCodeContent titleText="Output" codeContent={htmlCode} />
+                        Behold: a side-by-side of Phractal vs Typescript/React...
                     </StyledPara>
+                    <SideBySide>
+                        <StyledCodeContent titletext="Python" language="python" codecontent={pythonCode} />
+                        <StyledCodeContent titletext="React" language="react" codecontent={reactCode} />
+                    </SideBySide>
+                    And the output of both:
+                    <SideBySide>
+                    <StyledCodeContent titletext="HTML" language="html" codecontent={htmlCode} />
+                    <StyledOutputBlock>
+                        <h1>My List</h1>
+                        <ul>
+                            <li>beans</li>
+                            <li>rice</li>
+                            <li>hotsauce</li>
+                        </ul>
+                    </StyledOutputBlock>
+                    </SideBySide>
                 </StyledSection>
             </StyledSectionContainer>
             <StyledSectionContainer>
