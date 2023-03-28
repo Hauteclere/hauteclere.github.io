@@ -6,7 +6,7 @@ type HeadingProps = {
 };
 
 const StyledHeading = styled('h1')`
-    color: ${ColourScheme.light1};
+    color: ${ColourScheme.activeText};
     text-align:center;
     min-width: 350px;
     font-size: calc(18px + 3vw);
@@ -23,7 +23,7 @@ const StyledHeading = styled('h1')`
 `
 
 const HeadingContainer = styled('div')`
-    background-color: ${ColourScheme.dark3};
+    background-color: ${ColourScheme.headerBackground};
     width: 100%;
     height: 50px;
     @media(max-width:700px){

@@ -8,7 +8,7 @@ type CodeContentProps = {codecontent: string; titletext: string; language: strin
 type CodeBlockProps = { language: string; }
 
 const StyledCodeBlock = styled(SyntaxHighlighter)<CodeBlockProps>`
-    background-color: ${ColourScheme.dark2};
+    background-color: ${ColourScheme.codeBackground};
     color: white;
     margin: 1em;
     padding: 1em;
@@ -26,7 +26,7 @@ const StyledCodeContent: React.FC<CodeContentProps> = props => {
         <h3>{props.titletext}</h3>
         <StyledCodeBlock language={props.language} style={a11yDark} customStyle={{
             borderRadius: "5px", 
-            backgroundColor: ColourScheme.dark2,
+            backgroundColor: ColourScheme.codeBackground,
             color: "white",
             marginTop: "1em",
             padding: "1em",

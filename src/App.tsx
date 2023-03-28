@@ -3,11 +3,13 @@ import HomePage from "./pages/Home";
 import ProjectsPage from "./pages/Projects";
 import CVPage from "./pages/CV";
 import Navbar from "./components/Nav";
-import faviconUrl from "/logo1/favicon.ico"
+import faviconUrl from "/logo1/favicon.ico";
+import { ColourScheme } from "./assets/colours";
 
 export interface AppProps {}
 
 const App: React.FC<AppProps> = (props) => {
+
   let link = document.getElementById("favicon") as HTMLLinkElement;
   if (!link) {
     link = document.createElement('link') as HTMLLinkElement;
@@ -15,7 +17,14 @@ const App: React.FC<AppProps> = (props) => {
     document.getElementsByTagName('head')[0].appendChild(link);
   }
   link.href = faviconUrl;
-  return (
+
+  let theBody = document.getElementById('pageBody') as HTMLElement;
+  if (!theBody) {
+    theBody = document.createElement('body') as HTMLElement;
+  }
+  theBody.style.backgroundColor = ColourScheme.background;
+
+  return ( 
   <BrowserRouter>
     <Navbar extend={false}/>
     <Routes>

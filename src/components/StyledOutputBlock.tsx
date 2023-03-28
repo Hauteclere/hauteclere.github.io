@@ -7,7 +7,7 @@ const StyledOutputBlock = styled('div')`
     margin: 1em;
     border-style: solid;
     border-radius: 10px;
-    border-color: ${ColourScheme.light1};
+    border-color: ${ColourScheme.activeText};
     @media(max-width:900px){
         width: 100%;
         margin: 0em;

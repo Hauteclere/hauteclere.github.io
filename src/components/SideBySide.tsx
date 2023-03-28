@@ -11,7 +11,7 @@ const SideBySide = styled('div')<SideBySideProps>`
     margin: auto;
     margin-bottom: 0.5em;
     margin-top: 0.7em;
-    align-items: center;
+    align-items: stretch;
     @media(max-width:1240px){
         margin-left: 20px;
         margin-right: 20px;

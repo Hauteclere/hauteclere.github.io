@@ -13,7 +13,7 @@ const NavbarContainer = styled("nav")<NavbarProps>`
     height:${(props)=>(props.extend ? "100vh": "70px")};
     display: flex;
     flex-direction: row;
-    background-color: ${ColourScheme.dark3};
+    background-color: ${ColourScheme.headerBackground};
     @media(min-width:701px){
         height: 12vw;
     }
@@ -39,11 +39,12 @@ const NavbarLink = styled(Link)`
     font-size: x-large;
     text-decoration: none;
     margin: 10px;
-    color: ${ColourScheme.light3};
+    color: ${ColourScheme.secondaryText};
     &:hover,
     &:active,
     &:focus{
-        color: ${ColourScheme.light1};
+        color: ${ColourScheme.activeText};
+        text-decoration: underline;
     }
     @media(max-width: 700px) {
         display: none;
@@ -67,7 +68,7 @@ const NavbarImg = styled("img")`
 const ButtonImage = styled("img")<NavbarProps>`
     width: 50px;
     height: 50px; 
-    background-color: ${ColourScheme.dark3};
+    background-color: ${ColourScheme.headerBackground};
     transform: rotate(${props => props.extend ? `-90deg` : `0deg`});
 `
 
@@ -89,11 +90,11 @@ const ButtonLink = styled("button")<NavbarProps>`
     justify-content: center;
 `
 const ButtonText = styled("p")`
-    background-color: ${ColourScheme.dark3};
-    color: ${ColourScheme.light1};
+    background-color: ${ColourScheme.headerBackground};
+    color: ${ColourScheme.activeText};
     width: 50px;
     height: 20px;
-    border-color: ${ColourScheme.dark3};
+    border-color: ${ColourScheme.headerBackground};
     border-width: 1px;
     border-style: solid;
 `
@@ -112,11 +113,11 @@ const NavbarLinkExtended= styled(Link)`
     font-size: x-large;
     text-decoration: none;
     margin: 10px;
-    color: ${ColourScheme.light3};
+    color: ${ColourScheme.secondaryText};
     &:hover,
     &:active,
     &:focus{
-        color: ${ColourScheme.light1};
+        color: ${ColourScheme.activeText};
     }
 `
 
