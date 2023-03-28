@@ -9,6 +9,39 @@ import ThreeColumns from "../components/ThreeColumns";
 import LogoJumble from "../components/LogoJumble";
 import ThirdPartyLogo from "../components/ThirdPartyLogo";
 
+import pythonLogo from "/third_party_logos/webdev/python-logo-only.svg";
+import djangoLogo from "/third_party_logos/webdev/django-logo-negative.png";
+import drfLogo from "/third_party_logos/webdev/drf_logo.png";
+import flaskLogo from "/third_party_logos/webdev/460px-Flask_logo.svg.png";
+import jinjaLogo from "/third_party_logos/webdev/Jinja_software_logo.svg";
+import jsLogo from "/third_party_logos/webdev/JavaScript-logo.png";
+import typescriptLogo from "/third_party_logos/webdev/Typescript_logo_2020.svg.png";
+import reactLogo from "/third_party_logos/webdev/React-icon.svg.png";
+import gitLogo from "/third_party_logos/webdev/Git-Icon-1788C.svg";
+import githubLogo from "/third_party_logos/webdev/github-mark.png";
+import postgresLogo from "/third_party_logos/webdev/PostgreSQL_logo.3colors.120x120.png";
+import mongodbLogo from "/third_party_logos/webdev/MongoDB_Logo.svg";
+import linuxLogo from "/third_party_logos/webdev/linux_tux.svg";
+import ubuntuLogo from "/third_party_logos/webdev/Ubuntu_and_Ubuntu_Server_Icon.png";
+import awsLogo from "/third_party_logos/webdev/Amazon_Web_Services_Logo.svg";
+import jupyterLogo from "/third_party_logos/analysis/Jupyter_logo.svg";
+import pandasLogo from "/third_party_logos/analysis/pandas.svg";
+import scikitLogo from "/third_party_logos/analysis/260px-Scikit_learn_logo_small.svg.png";
+import ydataLogo from "/third_party_logos/analysis/ydata-logo.png";
+import networkxLogo from "/third_party_logos/analysis/networkx_logo.svg";
+import powerbiLogo from "/third_party_logos/analysis/600px-New_Power_BI_Logo.svg.png";
+import impactLogo from "/third_party_logos/analysis/4impact-orbit-logo-rgb-500px-225w.png";
+import emuLogo from "/third_party_logos/analysis/LOGO-EMUDATA-170x165.png";
+import coderLogo from "/third_party_logos/teaching/Coder_Academy_iteration_23-12.png";
+import shecodesLogo from "/third_party_logos/teaching/She{Codes}_2.png";
+
+import meSpeaking from "/images/me_speaking.jpg";
+import meProfessional from "/images/me_professional.jpg";
+import meHiking from "/images/me_hiking.jpg";
+import meHappy from "/images/me_happy.jpg";
+import meClimbing from "/images/me_climbing.jpg";
+import theMoon from "/images/the_moon.jpg";
+import meGormless from "/images/me_gormless.jpg";
 
 export interface HomePageProps {}
 
@@ -27,7 +60,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                         <br />
                     </StyledSection>
                 </ThreeColumns>
-                <CircleImage vanish={false} src="./static/images/me_professional.jpg" />
+                <CircleImage vanish={false} src={meProfessional} />
                 <ThreeColumns>
                     <StyledSection>
                         <StyledSubHeading>Contact Me</StyledSubHeading>
@@ -39,65 +72,65 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ThreeColumns>
             </SideBySide>
             <SideBySide reverse={false}>
-                <CircleImage vanish={false} src="./static/images/me_speaking.jpg" />
+                <CircleImage vanish={false} src={meSpeaking} />
                 <ThreeColumns>
                     <StyledSection>
                         <StyledSubHeading>Web Developmer</StyledSubHeading>
                         <StyledPara>Front-end, back-end, databases, cloud architecting and even a little bit of dev-ops. I'm like if da Vinci was bad at painting.</StyledPara>
                         <LogoJumble>
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/python-logo-only.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/django-logo-negative.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/drf_logo.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/460px-Flask_logo.svg.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/Jinja_software_logo.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/JavaScript-logo.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/Typescript_logo_2020.svg.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/React-icon.svg.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/Git-Icon-1788C.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/github-mark.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/PostgreSQL_logo.3colors.120x120.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/MongoDB_Logo.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/linux_tux.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/Ubuntu_and_Ubuntu_Server_Icon.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/webdev/Amazon_Web_Services_Logo.svg" />
+                            <ThirdPartyLogo src={pythonLogo} />
+                            <ThirdPartyLogo src={djangoLogo} />
+                            <ThirdPartyLogo src={drfLogo} />
+                            <ThirdPartyLogo src={flaskLogo} />
+                            <ThirdPartyLogo src={jinjaLogo} />
+                            <ThirdPartyLogo src={jsLogo} />
+                            <ThirdPartyLogo src={typescriptLogo} />
+                            <ThirdPartyLogo src={reactLogo} />
+                            <ThirdPartyLogo src={gitLogo} />
+                            <ThirdPartyLogo src={githubLogo} />
+                            <ThirdPartyLogo src={postgresLogo} />
+                            <ThirdPartyLogo src={mongodbLogo} />
+                            <ThirdPartyLogo src={linuxLogo} />
+                            <ThirdPartyLogo src={ubuntuLogo} />
+                            <ThirdPartyLogo src={awsLogo} />
                         </LogoJumble>
                     </StyledSection>
                 </ThreeColumns>
             </SideBySide>
             <SideBySide reverse={true}>
-                <CircleImage vanish={false} src="./static/images/me_hiking.jpg" />
+                <CircleImage vanish={false} src={meHiking} />
                 <ThreeColumns>
                     <StyledSection>
                         <StyledSubHeading>Data Analyst</StyledSubHeading>
                         <p>Analysis, schema design, pipelining, visualisation and custom tooling. Your data won't know what hit it.</p>
                         <LogoJumble>
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/Jupyter_logo.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/pandas.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/260px-Scikit_learn_logo_small.svg.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/ydata-logo.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/networkx_logo.svg" />
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/600px-New_Power_BI_Logo.svg.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/4impact-orbit-logo-rgb-500px-225w.png" />
-                            <ThirdPartyLogo src="./static/third_party_logos/analysis/LOGO-EMUDATA-170x165.png" />
+                            <ThirdPartyLogo src={jupyterLogo} />
+                            <ThirdPartyLogo src={pandasLogo} />
+                            <ThirdPartyLogo src={scikitLogo} />
+                            <ThirdPartyLogo src={ydataLogo} />
+                            <ThirdPartyLogo src={networkxLogo} />
+                            <ThirdPartyLogo src={powerbiLogo} />
+                            <ThirdPartyLogo src={impactLogo} />
+                            <ThirdPartyLogo src={emuLogo} />
                         </LogoJumble>
                     </StyledSection>
                 </ThreeColumns>
             </SideBySide>
             <SideBySide reverse={false}>
-                <CircleImage vanish={false} src="./static/images/me_happy.jpg" />
+                <CircleImage vanish={false} src={meHappy} />
                 <ThreeColumns>
                 <StyledSection>
                     <StyledSubHeading>Educator</StyledSubHeading>
                     <p>I've taught and written full-stack web development and computer science courses for adults, both at the tertiary level and in bootcamps.</p>
                     <LogoJumble>
-                        <ThirdPartyLogo src="./static/third_party_logos/teaching/Coder_Academy_iteration_23-12.png" />
-                        <ThirdPartyLogo src="./static/third_party_logos/teaching/She{Codes}_2.png" />
+                        <ThirdPartyLogo src={coderLogo} />
+                        <ThirdPartyLogo src={shecodesLogo} />
                     </LogoJumble>
                 </StyledSection>
                 </ThreeColumns>
             </SideBySide>
             <SideBySide reverse={true}>
-                <CircleImage vanish={false} src="./static/images/me_climbing.jpg" />
+                <CircleImage vanish={false} src={meClimbing} />
                 <ThreeColumns>
                 <StyledSection>
                     <StyledSubHeading>Rock Climber</StyledSubHeading>
@@ -106,7 +139,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ThreeColumns>
             </SideBySide>
             <SideBySide reverse={false}>
-                <CircleImage vanish={false} src="./static/images/the_moon.jpg" />
+                <CircleImage vanish={false} src={theMoon} />
                 <ThreeColumns>
                 <StyledSection>
                     <StyledSubHeading>Stargazer</StyledSubHeading>
@@ -115,7 +148,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ThreeColumns>
             </SideBySide>
             <SideBySide reverse={true}>
-                <CircleImage vanish={false} src="./static/images/me_gormless.jpg" />
+                <CircleImage vanish={false} src={meGormless} />
                 <ThreeColumns>
                 <StyledSection>
                     <StyledSubHeading>Tragically Born Without Gorm</StyledSubHeading>

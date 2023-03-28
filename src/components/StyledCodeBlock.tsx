@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ColourScheme } from "../assets/colours"; 
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import StyledWrapper from "./SideBySideWrapper";
 
