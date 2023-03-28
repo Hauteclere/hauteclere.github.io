@@ -56,7 +56,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                         <br />
                         <p>I'm Oliver.</p>
                         <br />
-                        <p>I'm a developer, data analyst, mentor, rock-climber, and star-gazer based in Meanjin.</p>
+                        <p>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin.</p>
                         <br />
                     </StyledSection>
                 </ThreeColumns>
@@ -75,8 +75,8 @@ const HomePage: React.FC<HomePageProps> = props => {
                 <CircleImage vanish={false} src={meSpeaking} />
                 <ThreeColumns>
                     <StyledSection>
-                        <StyledSubHeading>Web Developmer</StyledSubHeading>
-                        <StyledPara>Front-end, back-end, databases, cloud architecting and even a little bit of dev-ops. I'm like if da Vinci was bad at painting.</StyledPara>
+                        <StyledSubHeading>Web Developer</StyledSubHeading>
+                        <StyledPara>Front-end, back-end, databases, cloud architecting and even a little bit of dev-ops. I'm a regular da Vinci over here. Just don't ask me to paint your chapel ceiling.</StyledPara>
                         <LogoJumble>
                             <ThirdPartyLogo src={pythonLogo} />
                             <ThirdPartyLogo src={djangoLogo} />
