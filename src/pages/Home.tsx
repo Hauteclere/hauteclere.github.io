@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
 
 import MainHeading from "../components/MainHeading";
 import StyledBody from "../components/PageBody";
@@ -14,6 +13,7 @@ import ThreeColumns from "../components/ThreeColumns";
 import LogoJumble from "../components/LogoJumble";
 import ThirdPartyLogo from "../components/ThirdPartyLogo";
 import ImageWrapper from '../components/ImageWrapper';
+import SectionWrapper from '../components/SectionWrapper';
 
 import pythonLogo from "/third_party_logos/webdev/python-logo-only.svg";
 import djangoLogo from "/third_party_logos/webdev/django-logo-negative.png";
@@ -55,24 +55,24 @@ export interface HomePageProps {}
 const HomePage: React.FC<HomePageProps> = props => {
     return (
         <StyledBody>
-            <MainHeading text="Oliver Lavers"></MainHeading>
-            <SideBySide reverse={false}>
-                <ThreeColumns>
-                    <StyledSection>
-                        <StyledSubHeading>Hi!</StyledSubHeading>
-                        <StyledPara>I'm Oliver.</StyledPara>
-                        <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
-                        <StyledPara>This is my portfolio website. Have a read about me, or look at the "Projects" page to see what I've been up to. Look at me go!</StyledPara>
-                    </StyledSection>
-                </ThreeColumns>
+            <MainHeading text="Hauteclere.code"></MainHeading>
+            <SectionWrapper>
+                <StyledSection>
+                    <StyledSubHeading>Hi!</StyledSubHeading>
+                    <StyledPara>I'm Oliver.</StyledPara>
+                    <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
+                    <StyledPara>This is my portfolio website. Have a read about me, or look at the "Projects" page to see what I've been up to. Look at me go!</StyledPara>
+                </StyledSection>
+            </SectionWrapper>
+            <SideBySide reverse={true}>
                 <ImageWrapper>
                     <CircleImage vanish={false} src={meProfessional} />
                 </ImageWrapper>
                 <ThreeColumns>
                     <StyledSection>
                         <StyledSubHeading>Contact Me</StyledSubHeading>
-                        <StyledPara><i className="fa fa-phone"></i> (+61) 0447 768 719</StyledPara>
-                        <StyledPara><i className="fa fa-envelope"></i> <u>hauteclere.code@gmail.com</u></StyledPara>
+                        <StyledPara><FontAwesomeIcon icon={faPhone} /> (+61) 0447 768 719</StyledPara>
+                        <StyledPara><FontAwesomeIcon icon={faEnvelope} /> <u>hauteclere.code@gmail.com</u></StyledPara>
                         <StyledPara><FontAwesomeIcon icon={faLinkedin} /> <a href="https://www.linkedin.com/in/hauteclere/">LinkedIn</a></StyledPara>
                         <StyledPara><FontAwesomeIcon icon={faGithub} /> <a href="https://github.com/Hauteclere/">GitHub</a></StyledPara>
                         <StyledPara><FontAwesomeIcon icon={faCoffee} /> <a href="https://calendly.com/oliver-lavers/30min">Calendly</a></StyledPara>
