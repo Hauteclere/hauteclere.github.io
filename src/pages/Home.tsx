@@ -72,11 +72,16 @@ const HomePage: React.FC<HomePageProps> = props => {
 
     return (
         <StyledBody>
-            <MainHeading text="Hauteclere.code"></MainHeading>
+            <MainHeading text="HauteclereCode"></MainHeading>
             <SideBySide reverse={false}>
-                <ColourPickerContainer>
-                    <StyledSection aria-hidden="true">
-                        <StyledSubHeading colour={subheadingText}>Pick A Colour Scheme:</StyledSubHeading>
+                <ThreeColumns>
+                    <StyledSection>
+                        <StyledSubHeading colour={subheadingText}>Hi!</StyledSubHeading>
+                        <StyledPara>I'm Oliver.</StyledPara>
+                        <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
+                        <StyledPara>This is my portfolio website. Have a read about me, or look at the "Projects" page to see what I've been up to, or just... </StyledPara>
+                        <br />
+                        <StyledSubHeading colour={subheadingText}>Check out this fun colour scheme picker:</StyledSubHeading>
                         <ColourButtonContainer>
                             <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightBlue.highlightOnLight} background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                             <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightGreen.highlightOnLight} background={ColourScheme.lightGreen.mainLight} foreground={ColourScheme.lightGreen.highlightOnLight} onClick={changeToLightGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
@@ -85,17 +90,6 @@ const HomePage: React.FC<HomePageProps> = props => {
                             <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkGreen.highlightOnLight} background={ColourScheme.darkGreen.mainLight} foreground={ColourScheme.darkGreen.highlightOnLight} onClick={changeToDarkGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                             <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkBlue.highlightOnLight} background={ColourScheme.darkBlue.mainLight} foreground={ColourScheme.darkBlue.highlightOnLight} onClick={changeToDarkBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                         </ColourButtonContainer>
-                    </StyledSection>
-                </ColourPickerContainer>
-            </SideBySide>
-            <SideBySide reverse={false}>
-                
-                <ThreeColumns>
-                    <StyledSection>
-                        <StyledSubHeading colour={subheadingText}>Hi!</StyledSubHeading>
-                        <StyledPara>I'm Oliver.</StyledPara>
-                        <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
-                        <StyledPara>This is my portfolio website. Have a read about me, or look at the "Projects" page to see what I've been up to. Look at me go!</StyledPara>
                     </StyledSection>
                 </ThreeColumns>
             </ SideBySide>
