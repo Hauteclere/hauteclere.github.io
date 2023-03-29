@@ -9,29 +9,39 @@ export const ColourScheme = {
     /* headerBackground: '#120013', */
     /* background: '#131213', */
 
+    
+    mainLight: '#abffac',
+    mainDark: '#005555',
+    highlightOnLight: '#008000',
+    highlightOnDark: '#baf73c',
+
+    subheadingText: '#008000',
+
     textColour: '#001312',
-    activeText: '#34385e',
-    secondaryText: '#006080',
     codeBackground: '#131200',
-    headerBackground: '#acabff',
-    background: '#34385e',
     sectionBackground: 'ghostwhite',
 
     /* 
         red: {
-            light: '#ffacab',
-            activeText: '#aa2e00',
-            secondaryText: '#3c2109'
+            mainLight: '#ffacab',
+            mainDark: '#870c25',
+            highlightOnLight: '#d50000',
+            highlightOnDark: '#e76e3c',
+            subheadingText: '#d50000'
         },
         green: {
-            light: '#abffac',
-            activeText: '#082213',
-            secondaryText: '#007a7c'
+            mainLight: '#abffac',
+            mainDark: '#005555',
+            highlightOnLight: '#008000', 
+            highlightOnDark: "#baf73c",
+            subheadingText: '#008000'
         },
         blue: {
-            light: '#acabff',
-            activeText: '#34385e',
-            'secondaryText: '#006080'
+            mainLight: '#acabff',
+            mainDark: '#34415e',
+            highlightOnLight: '#1460aa',
+            highlightOnDark: '#00bfff',
+            subheadingText: '#1460aa'
         }
     */
 }

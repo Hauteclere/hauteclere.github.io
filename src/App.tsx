@@ -6,10 +6,9 @@ import Navbar from "./components/Nav";
 import faviconUrl from "/logo1/favicon.ico";
 import { ColourScheme } from "./assets/colours";
 
-export interface AppProps {}
+const App: React.FC = () => {
 
-const App: React.FC<AppProps> = (props) => {
-
+  // Setting the favicon... 
   let link = document.getElementById("favicon") as HTMLLinkElement;
   if (!link) {
     link = document.createElement('link') as HTMLLinkElement;
@@ -18,11 +17,12 @@ const App: React.FC<AppProps> = (props) => {
   }
   link.href = faviconUrl;
 
+  // Setting the background colour...
   let theBody = document.getElementById('pageBody') as HTMLElement;
   if (!theBody) {
     theBody = document.createElement('body') as HTMLElement;
   }
-  theBody.style.backgroundColor = ColourScheme.background;
+  theBody.style.backgroundColor = ColourScheme.mainLight;
 
   return ( 
   <BrowserRouter>
