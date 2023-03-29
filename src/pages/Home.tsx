@@ -72,7 +72,7 @@ const HomePage: React.FC<HomePageProps> = props => {
 
     return (
         <StyledBody>
-            <MainHeading text="HauteclereCode"></MainHeading>
+            <MainHeading text="Hauteclere.code"></MainHeading>
             <SideBySide reverse={false}>
                 <ThreeColumns>
                     <StyledSection>

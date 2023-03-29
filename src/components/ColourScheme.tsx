@@ -10,6 +10,13 @@ import faviconUrlBlue from "/logo1/favicon.ico";
 import faviconUrlGreen from "/logo3/favicon.ico";
 import faviconUrlRed from "/logo2/favicon.ico";
 
+import logoDarkBlue from "/logodarkblue.svg";
+import logoLightBlue from "/logolightblue.svg";
+import logoDarkGreen from "/logodarkgreen.svg";
+import logoLightGreen from "/logolightgreen.svg";
+import logoDarkRed from "/logodarkred.svg";
+import logoLightRed from "/logolightred.svg";
+
 interface ColourState {
     mainLight: string,
     mainDark: string,
@@ -41,7 +48,7 @@ const useColourStore = create<ColourState>()(
                 textColour: ColourScheme.textColour,
                 codeBackground: ColourScheme.codeBackground,
                 sectionBackground: ColourScheme.sectionBackground,
-                logoUrl: logoUrlGreen,
+                logoUrl: logoLightGreen,
                 faviconUrl: faviconUrlGreen,
                 changeToLightRed: () => set((state: ColourState) => ({
                     mainLight: ColourScheme.lightRed.mainLight,
@@ -49,8 +56,8 @@ const useColourStore = create<ColourState>()(
                     highlightOnLight: ColourScheme.lightRed.highlightOnLight,
                     highlightOnDark: ColourScheme.lightRed.highlightOnDark,
                     subheadingText: ColourScheme.lightRed.subheadingText,
-                    logoUrl: logoUrlRed,
-                    faviconUrl: faviconUrlRed,
+                    logoUrl: logoLightRed,
+                    faviconUrl: logoLightRed,
                 })),
                 changeToLightGreen: () => set((state: ColourState) => ({
                     mainLight: ColourScheme.lightGreen.mainLight,
@@ -58,8 +65,8 @@ const useColourStore = create<ColourState>()(
                     highlightOnLight: ColourScheme.lightGreen.highlightOnLight,
                     highlightOnDark: ColourScheme.lightGreen.highlightOnDark,
                     subheadingText: ColourScheme.lightGreen.subheadingText,
-                    logoUrl: logoUrlGreen,
-                    faviconUrl: faviconUrlGreen,
+                    logoUrl: logoLightGreen,
+                    faviconUrl: logoLightGreen,
                 })),
                 changeToLightBlue: () => set((state: ColourState) => ({
                     mainLight: ColourScheme.lightBlue.mainLight,
@@ -67,8 +74,8 @@ const useColourStore = create<ColourState>()(
                     highlightOnLight: ColourScheme.lightBlue.highlightOnLight,
                     highlightOnDark: ColourScheme.lightBlue.highlightOnDark,
                     subheadingText: ColourScheme.lightBlue.subheadingText,
-                    logoUrl: logoUrlBlue,
-                    faviconUrl: faviconUrlBlue,
+                    logoUrl: logoLightBlue,
+                    faviconUrl: logoLightBlue,
                 })),
                 changeToDarkRed: () => set((state: ColourState) => ({
                     mainLight: ColourScheme.darkRed.mainLight,
@@ -76,8 +83,8 @@ const useColourStore = create<ColourState>()(
                     highlightOnLight: ColourScheme.darkRed.highlightOnLight,
                     highlightOnDark: ColourScheme.darkRed.highlightOnDark,
                     subheadingText: ColourScheme.darkRed.subheadingText,
-                    logoUrl: logoUrlRed,
-                    faviconUrl: faviconUrlRed,
+                    logoUrl: logoDarkRed,
+                    faviconUrl: logoDarkRed,
                 })),
                 changeToDarkGreen: () => set((state: ColourState) => ({
                     mainLight: ColourScheme.darkGreen.mainLight,
@@ -85,8 +92,8 @@ const useColourStore = create<ColourState>()(
                     highlightOnLight: ColourScheme.darkGreen.highlightOnLight,
                     highlightOnDark: ColourScheme.darkGreen.highlightOnDark,
                     subheadingText: ColourScheme.darkGreen.subheadingText,
-                    logoUrl: logoUrlGreen,
-                    faviconUrl: faviconUrlGreen,
+                    logoUrl: logoDarkGreen,
+                    faviconUrl: logoDarkGreen,
                 })),
                 changeToDarkBlue: () => set((state: ColourState) => ({
                     mainLight: ColourScheme.darkBlue.mainLight,
@@ -94,8 +101,8 @@ const useColourStore = create<ColourState>()(
                     highlightOnLight: ColourScheme.darkBlue.highlightOnLight,
                     highlightOnDark: ColourScheme.darkBlue.highlightOnDark,
                     subheadingText: ColourScheme.darkBlue.subheadingText,
-                    logoUrl: logoUrlBlue,
-                    faviconUrl: faviconUrlBlue,
+                    logoUrl: logoDarkBlue,
+                    faviconUrl: logoDarkBlue,
                 })),
             }),
         {
