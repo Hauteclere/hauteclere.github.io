@@ -1,15 +1,5 @@
 export const ColourScheme = {
     
-    /* activeText: '#00ACAB', */
-    /* secondaryText: '#AB00AC', */
-    /* light2: '#ACAB00', */
-    /* mild1: '#acabff', */
-    /* mild2: '#ffacab', */
-    /* mild3: '#abffac', */
-    /* headerBackground: '#120013', */
-    /* background: '#131213', */
-
-    
     mainLight: '#abffac',
     mainDark: '#005555',
     highlightOnLight: '#008000',
