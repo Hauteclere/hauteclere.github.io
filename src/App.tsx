@@ -3,22 +3,16 @@ import HomePage from "./pages/Home";
 import ProjectsPage from "./pages/Projects";
 import CVPage from "./pages/CV";
 import Navbar from "./components/Nav";
-import faviconUrl from "/logo1/favicon.ico";
-import { ColourScheme } from "./assets/colours";
 import useColourStore from "./components/ColourScheme";
-import { useEffect } from "react";
 
 
 
 const App: React.FC = () => {
 
-  let setColourLightGreen = useColourStore((state) => state.changeToLightGreen)
+  
   let mainLight = useColourStore((state) => state.mainLight)
   let mainDark = useColourStore((state) => (state.mainDark))
-
-  useEffect(() => {
-    setColourLightGreen()
-  }, [])  
+  let faviconUrl = useColourStore((state) => state.faviconUrl)
 
   // Setting the favicon... 
   let link = document.getElementById("favicon") as HTMLLinkElement;

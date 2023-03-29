@@ -1,9 +1,7 @@
 import { useState, useEffect,} from "react";
 import { Link, useLocation, } from "react-router-dom";
-import styled from "styled-components";
-import { ColourScheme } from "../assets/colours"; 
+import styled from "styled-components"; 
 import useColourStore from "./ColourScheme";
-import logoUrl from "/logo1/logo1.png"
 
 type NavbarProps = {
     extend: boolean,
@@ -147,6 +145,7 @@ const Navbar: React.FC<NavbarProps> = props => {
     let mainDark = useColourStore(state => (state.mainDark))
     let mainLight = useColourStore(state => (state.mainLight))
     let highlightOnDark = useColourStore(state => (state.highlightOnDark))
+    let logoUrl = useColourStore(state => state.logoUrl)
 
     return (
         <NavbarContainer backgroundColour={mainDark} extend={extendNavbar}>

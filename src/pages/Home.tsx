@@ -76,12 +76,12 @@ const HomePage: React.FC<HomePageProps> = props => {
                     <StyledSection>
                         <StyledSubHeading colour={subheadingText}>Colour Scheme:</StyledSubHeading>
                         <ColourButtonContainer>
+                            <ColourSchemeButton background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton background={ColourScheme.lightGreen.mainLight} foreground={ColourScheme.lightGreen.highlightOnLight} onClick={changeToLightGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton background={ColourScheme.lightRed.mainLight} foreground={ColourScheme.lightRed.highlightOnLight} onClick={changeToLightRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                             <ColourSchemeButton background={ColourScheme.darkRed.mainLight} foreground={ColourScheme.darkRed.highlightOnLight} onClick={changeToDarkRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                             <ColourSchemeButton background={ColourScheme.darkGreen.mainLight} foreground={ColourScheme.darkGreen.highlightOnLight} onClick={changeToDarkGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                             <ColourSchemeButton background={ColourScheme.darkBlue.mainLight} foreground={ColourScheme.darkBlue.highlightOnLight} onClick={changeToDarkBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.lightRed.mainLight} foreground={ColourScheme.lightRed.highlightOnLight} onClick={changeToLightRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.lightGreen.mainLight} foreground={ColourScheme.lightGreen.highlightOnLight} onClick={changeToLightGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                         </ColourButtonContainer>
                     </StyledSection>
                 </ColourPickerContainer>
@@ -211,7 +211,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
-                    <StyledSubHeading colour={subheadingText}>Tragically Born Without Gorm</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Occasionally Tragic</StyledSubHeading>
                     <br />
                     <p>But I stay chipper and I make an effort.</p>
                     <br />

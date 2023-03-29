@@ -1,3 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+
 import MainHeading from "../components/MainHeading";
 import StyledBody from "../components/PageBody";
 import StyledSection from "../components/Section";
@@ -121,8 +126,8 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
                     <StyledSubHeading colour={highlightOnLight}>Phractal</StyledSubHeading>
                     <br/>
                     <StytledUL>
-                        <li><i className="fa fa-link"></i> <a href="https://pypi.org/project/Phractal/">Pypi</a></li>
-                        <li><i className="fa fa-github"></i> <a href="https://github.com/Hauteclere/phractal/">GitHub</a></li>
+                        <li><FontAwesomeIcon icon={faLink} /> <a href="https://pypi.org/project/Phractal/">Pypi</a></li>
+                        <li><FontAwesomeIcon icon={faGithub} /> <a href="https://github.com/Hauteclere/phractal/">GitHub</a></li>
                     </StytledUL>
                     <StyledPara> 
                         Phractal is a tool for creating documents programmatically with Python, powered by <a href="https://docs.pydantic.dev/">Pydantic</a> and <a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja2</a>. It is designed, built, packaged and distributed by yours truly.
@@ -131,7 +136,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
                         I created Phractal because I needed a faster way of generating data quality reports for my work as a data analyst. Often I would be handed a table with hundreds of columns, and asked to create a PDF summarising the same six metrics for each variable.
                     </StyledPara>
                     <StyledPara>    
-                        <a href="https://pypi.org/project/pandas-profiling/">Pandas-profiling</a> wasn't cutting it, and building documents manually in the Office suite was taking me longer than the analysis itself. Jinja2 would let me create HTML documents that I could then convert to PDF, but this was time-consuming and fiddly. I needed more power! 
+                        <a href="https://pypi.org/project/pandas-profiling/">Pandas-profiling</a> wasn't giving me the measures I wanted, and building documents manually in the Office suite was taking me longer than the analysis itself. Jinja2 would let me create HTML documents that I could then convert to PDF, but this was time-consuming and fiddly. I needed more power! 
                     </StyledPara>
                     <StyledPara>
                         I was dreaming of a Python library that gave me the component-driven development style and type-checking that I was used to from React+Typescript on the front-end. Phractal is the realisation of that dream. 
