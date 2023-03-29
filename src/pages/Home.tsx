@@ -75,7 +75,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             <MainHeading text="Hauteclere.code"></MainHeading>
             <SideBySide reverse={false}>
                 <ColourPickerContainer>
-                    <StyledSection>
+                    <StyledSection aria-hidden="true">
                         <StyledSubHeading colour={subheadingText}>Pick A Colour Scheme:</StyledSubHeading>
                         <ColourButtonContainer>
                             <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightBlue.highlightOnLight} background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
@@ -101,7 +101,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </ SideBySide>
             <SideBySide reverse={true}>
                 <ImageWrapper>
-                    <CircleImage vanish={false} src={meProfessional} />
+                    <CircleImage alt={"Me looking professional in a suit. I am smiling and holding a glass of water."} vanish={false} src={meProfessional} />
                 </ImageWrapper>
                 <ThreeColumns>
                     <StyledSection>
@@ -116,7 +116,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </SideBySide>
             <SideBySide reverse={false}>
                 <ImageWrapper>
-                    <CircleImage vanish={false} src={meSpeaking} />
+                    <CircleImage alt={"Me looking confident while public speaking. I am smiling and holding a microphone."} vanish={false} src={meSpeaking} />
                 </ImageWrapper>
                 <ThreeColumns>
                     <StyledSection>
@@ -145,7 +145,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </SideBySide>
             <SideBySide reverse={true}>
                 <ImageWrapper>
-                    <CircleImage vanish={false} src={meHiking} />
+                    <CircleImage alt={"Me looking relaxed while bushwalking. I am standing in front of a waterfall."} vanish={false} src={meHiking} />
                 </ImageWrapper>
                 <ThreeColumns>
                     <StyledSection>
@@ -168,7 +168,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </SideBySide>
             <SideBySide reverse={false}>
                 <ImageWrapper>
-                    <CircleImage vanish={false} src={meHappy} />
+                    <CircleImage alt={"Me looking elated in front of some greenery. I am looking up and to the left at something we cannot see."} vanish={false} src={meHappy} />
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
@@ -185,7 +185,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </SideBySide>
             <SideBySide reverse={true}>
                 <ImageWrapper>
-                    <CircleImage vanish={false} src={meClimbing} />
+                    <CircleImage alt={"Me looking determined while rock climbing. I am very high up and wearing a brightly coloured helmet."} vanish={false} src={meClimbing} />
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
@@ -197,7 +197,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </SideBySide>
             <SideBySide reverse={false}>
                 <ImageWrapper>
-                    <CircleImage vanish={false} src={theMoon} />
+                    <CircleImage alt={"A magnified photograph of the moon. It is yellow-white, and you can make out small craters on its surface."} vanish={false} src={theMoon} />
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
@@ -209,7 +209,7 @@ const HomePage: React.FC<HomePageProps> = props => {
             </SideBySide>
             <SideBySide reverse={true}>
                 <ImageWrapper>
-                    <CircleImage vanish={false} src={meGormless} />
+                    <CircleImage alt={"Me looking goofy on top of a mountain. I am drinking out of the wrong side of a canned drink, and have a silly expression on my face."} vanish={false} src={meGormless} />
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
