@@ -39,11 +39,11 @@ const NavbarLink = styled(Link)`
     font-size: x-large;
     text-decoration: none;
     margin: 10px;
-    color: ${ColourScheme.highlightOnDark};
+    color: ${ColourScheme.mainLight};
     &:hover,
     &:active,
     &:focus{
-        color: ${ColourScheme.mainLight};
+        color: ${ColourScheme.highlightOnDark};
         text-decoration: underline;
     }
     @media(max-width: 700px) {
@@ -117,7 +117,7 @@ const NavbarLinkExtended= styled(Link)`
     &:hover,
     &:active,
     &:focus{
-        color: ${ColourScheme.highlightOnDark};
+        color: ${ColourScheme.highlightOnLight};
     }
 `
 

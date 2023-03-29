@@ -6,7 +6,7 @@ type HeadingProps = {
 };
 
 const StyledHeading = styled('h1')`
-    color: ${ColourScheme.mainLight};
+    color: ${ColourScheme.highlightOnDark};
     text-align:center;
     min-width: 350px;
     font-size: calc(18px + 3vw);
