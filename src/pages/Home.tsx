@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faPhone, faEnvelope, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useRef, useEffect } from 'react'
 
 import MainHeading from "../components/MainHeading";
 import StyledBody from "../components/PageBody";
@@ -60,6 +61,7 @@ export interface HomePageProps {}
 const HomePage: React.FC<HomePageProps> = props => {
 
     let subheadingText = useColourStore(state => state.subheadingText)
+    let highlightOnLight = useColourStore(state => state.highlightOnLight)
 
     const changeToDarkRed = useColourStore(state => state.changeToDarkRed)
     const changeToDarkGreen = useColourStore(state => state.changeToDarkGreen)
@@ -74,14 +76,14 @@ const HomePage: React.FC<HomePageProps> = props => {
             <SideBySide reverse={false}>
                 <ColourPickerContainer>
                     <StyledSection>
-                        <StyledSubHeading colour={subheadingText}>Colour Scheme:</StyledSubHeading>
+                        <StyledSubHeading colour={subheadingText}>Pick A Colour Scheme:</StyledSubHeading>
                         <ColourButtonContainer>
-                            <ColourSchemeButton background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.lightGreen.mainLight} foreground={ColourScheme.lightGreen.highlightOnLight} onClick={changeToLightGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.lightRed.mainLight} foreground={ColourScheme.lightRed.highlightOnLight} onClick={changeToLightRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.darkRed.mainLight} foreground={ColourScheme.darkRed.highlightOnLight} onClick={changeToDarkRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.darkGreen.mainLight} foreground={ColourScheme.darkGreen.highlightOnLight} onClick={changeToDarkGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton background={ColourScheme.darkBlue.mainLight} foreground={ColourScheme.darkBlue.highlightOnLight} onClick={changeToDarkBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightBlue.highlightOnLight} background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightGreen.highlightOnLight} background={ColourScheme.lightGreen.mainLight} foreground={ColourScheme.lightGreen.highlightOnLight} onClick={changeToLightGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightRed.highlightOnLight} background={ColourScheme.lightRed.mainLight} foreground={ColourScheme.lightRed.highlightOnLight} onClick={changeToLightRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkRed.highlightOnLight} background={ColourScheme.darkRed.mainLight} foreground={ColourScheme.darkRed.highlightOnLight} onClick={changeToDarkRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkGreen.highlightOnLight} background={ColourScheme.darkGreen.mainLight} foreground={ColourScheme.darkGreen.highlightOnLight} onClick={changeToDarkGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkBlue.highlightOnLight} background={ColourScheme.darkBlue.mainLight} foreground={ColourScheme.darkBlue.highlightOnLight} onClick={changeToDarkBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                         </ColourButtonContainer>
                     </StyledSection>
                 </ColourPickerContainer>
