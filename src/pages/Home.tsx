@@ -13,7 +13,11 @@ import ThreeColumns from "../components/ThreeColumns";
 import LogoJumble from "../components/LogoJumble";
 import ThirdPartyLogo from "../components/ThirdPartyLogo";
 import ImageWrapper from '../components/ImageWrapper';
-import SectionWrapper from '../components/SectionWrapper';
+import ColourPickerContainer from '../components/ColourPickerContainer';
+import useColourStore from '../components/ColourScheme';
+import ColourSchemeButton from '../components/ColourSchemeButton';
+import { ColourScheme } from '../assets/colours';
+import ColourButtonContainer from '../components/ColourButtonContainer';
 
 import pythonLogo from "/third_party_logos/webdev/python-logo-only.svg";
 import djangoLogo from "/third_party_logos/webdev/django-logo-negative.png";
@@ -50,27 +54,56 @@ import meClimbing from "/images/me_climbing.jpg";
 import theMoon from "/images/the_moon.jpg";
 import meGormless from "/images/me_gormless.jpg";
 
+
 export interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = props => {
+
+    let subheadingText = useColourStore(state => state.subheadingText)
+
+    const changeToDarkRed = useColourStore(state => state.changeToDarkRed)
+    const changeToDarkGreen = useColourStore(state => state.changeToDarkGreen)
+    const changeToDarkBlue = useColourStore(state => state.changeToDarkBlue)
+    const changeToLightRed = useColourStore(state => state.changeToLightRed)
+    const changeToLightGreen = useColourStore(state => state.changeToLightGreen)
+    const changeToLightBlue = useColourStore(state => state.changeToLightBlue)
+
     return (
         <StyledBody>
             <MainHeading text="Hauteclere.code"></MainHeading>
-            <SectionWrapper>
-                <StyledSection>
-                    <StyledSubHeading>Hi!</StyledSubHeading>
-                    <StyledPara>I'm Oliver.</StyledPara>
-                    <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
-                    <StyledPara>This is my portfolio website. Have a read about me, or look at the "Projects" page to see what I've been up to. Look at me go!</StyledPara>
-                </StyledSection>
-            </SectionWrapper>
+            <SideBySide reverse={false}>
+                <ColourPickerContainer>
+                    <StyledSection>
+                        <StyledSubHeading colour={subheadingText}>Colour Scheme:</StyledSubHeading>
+                        <ColourButtonContainer>
+                            <ColourSchemeButton background={ColourScheme.darkRed.mainLight} foreground={ColourScheme.darkRed.highlightOnLight} onClick={changeToDarkRed}>Dark Red</ColourSchemeButton>
+                            <ColourSchemeButton background={ColourScheme.darkGreen.mainLight} foreground={ColourScheme.darkGreen.highlightOnLight} onClick={changeToDarkGreen}>Dark Green</ColourSchemeButton>
+                            <ColourSchemeButton background={ColourScheme.darkBlue.mainLight} foreground={ColourScheme.darkBlue.highlightOnLight} onClick={changeToDarkBlue}>Dark Blue</ColourSchemeButton>
+                            <ColourSchemeButton background={ColourScheme.lightRed.mainLight} foreground={ColourScheme.lightRed.highlightOnLight} onClick={changeToLightRed}>Light Red</ColourSchemeButton>
+                            <ColourSchemeButton background={ColourScheme.lightGreen.mainLight} foreground={ColourScheme.lightGreen.highlightOnLight} onClick={changeToLightGreen}>Light Green</ColourSchemeButton>
+                            <ColourSchemeButton background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}>Light Blue</ColourSchemeButton>
+                        </ColourButtonContainer>
+                    </StyledSection>
+                </ColourPickerContainer>
+            </SideBySide>
+            <SideBySide reverse={false}>
+                
+                <ThreeColumns>
+                    <StyledSection>
+                        <StyledSubHeading colour={subheadingText}>Hi!</StyledSubHeading>
+                        <StyledPara>I'm Oliver.</StyledPara>
+                        <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
+                        <StyledPara>This is my portfolio website. Have a read about me, or look at the "Projects" page to see what I've been up to. Look at me go!</StyledPara>
+                    </StyledSection>
+                </ThreeColumns>
+            </ SideBySide>
             <SideBySide reverse={true}>
                 <ImageWrapper>
                     <CircleImage vanish={false} src={meProfessional} />
                 </ImageWrapper>
                 <ThreeColumns>
                     <StyledSection>
-                        <StyledSubHeading>Contact Me</StyledSubHeading>
+                        <StyledSubHeading colour={subheadingText}>Contact Me</StyledSubHeading>
                         <StyledPara><FontAwesomeIcon icon={faPhone} /> (+61) 0447 768 719</StyledPara>
                         <StyledPara><FontAwesomeIcon icon={faEnvelope} /> <u>hauteclere.code@gmail.com</u></StyledPara>
                         <StyledPara><FontAwesomeIcon icon={faLinkedin} /> <a href="https://www.linkedin.com/in/hauteclere/">LinkedIn</a></StyledPara>
@@ -85,7 +118,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ImageWrapper>
                 <ThreeColumns>
                     <StyledSection>
-                        <StyledSubHeading>Web Developer</StyledSubHeading>
+                        <StyledSubHeading colour={subheadingText}>Web Developer</StyledSubHeading>
                         <StyledPara>Front-end, back-end, databases, cloud architecting and even a little bit of dev-ops. I'm a regular da Vinci over here. Just don't ask me to paint your chapel ceiling.</StyledPara>
                         <StyledPara>My first role in tech was as a web developer, and I've never stopped honing my skills. I coded this website in Typescript/React, and I've also written and distributed <a href="https://pypi.org/project/Phractal/">my own original library</a> for generating HTML from typed components in Python.</StyledPara>
                         <LogoJumble>
@@ -114,7 +147,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ImageWrapper>
                 <ThreeColumns>
                     <StyledSection>
-                        <StyledSubHeading>Data Analyst</StyledSubHeading>
+                        <StyledSubHeading colour={subheadingText}>Data Analyst</StyledSubHeading>
                         <StyledPara>Analysis, schema design, pipelining, visualisation and custom tooling. Your data won't know what hit it.</StyledPara>
                         <StyledPara>I currently work full-time as a Data Analyst for <a href="http://emudata.com.au/">Emu Data</a>. We are a small data consulting firm with big plans, based out of Meanjin!</StyledPara>
                         <StyledPara>I specialise in Trust and Quality analysis. Dirty data is interesting data.</StyledPara>
@@ -137,7 +170,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
-                    <StyledSubHeading>Educator</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Educator</StyledSubHeading>
                     <StyledPara>Teaching turns out to be one of the things that gives me the most joy in my work.</StyledPara> 
                     <StyledPara>In addition to my data analysis work, I am currently the Lead Educator at <a href="https://shecodes.com.au/about/">She Codes Australia</a>, an NFP aimed at improving gender diversity in IT. In the past I have taught and written both certified diploma and bootcamp-style courses, and I am also available for masterclasses and other speaking engagements.</StyledPara>
                     <LogoJumble>
@@ -154,7 +187,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
-                    <StyledSubHeading>Rock Climber</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Rock Climber</StyledSubHeading>
                     <StyledPara>Confession: the bits of rock climbing that I like are the bits that rock climbing snobs think are passé. </StyledPara>
                     <StyledPara>I'm good at dynamic jumps, big throws, and indoor bouldering. I don't care though, because rock climbing gives me a lot of joy, and I've decided there's no rule that says you need to be good at your hobbies. I'm getting better at crack climbing, and despite my shortcomings I still go outdoor lead climbing as often as I can, because it's nice to be terrified every once in a while.</StyledPara>
                 </StyledSection>
@@ -166,9 +199,9 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
-                    <StyledSubHeading>Star Gazer</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Star Gazer</StyledSubHeading>
                     <StyledPara>I took this photo of the moon!</StyledPara>
-                    <StyledPara>Back when we were all locked down, <a href="https://en.wikipedia.org/wiki/Starlink">Starlink</a> satellites were beginning to be launched, and there was a small community of astronomers who were concerned that these new satellites might become the brightest objects in the sky, drowning out the stars. Boy does Elon Musk suck. The thought of not seeing the Milky Way again was horrifying to me, and I made a resolution to get outside of light pollution and see the night sky as often as I could. I've followed through, and regularly go camping/comet-hunting with my friends. </ StyledPara>
+                    <StyledPara>Back when we were all locked down, <a href="https://en.wikipedia.org/wiki/Starlink">Starlink</a> satellites were beginning to be launched, and there was a small community of astronomers who were concerned that these new satellites might become the brightest objects in the sky, drowning out the stars. Boy does Elon Musk suck. The thought of not seeing the Milky Way again alarmed me, and I made a resolution to get outside of light pollution and see the night sky as often as I could. I've followed through, and regularly go camping/comet-hunting with my friends. </ StyledPara>
                 </StyledSection>
                 </ThreeColumns>
             </SideBySide>
@@ -178,7 +211,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                 </ImageWrapper>
                 <ThreeColumns>
                 <StyledSection>
-                    <StyledSubHeading>Tragically Born Without Gorm</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Tragically Born Without Gorm</StyledSubHeading>
                     <br />
                     <p>But I stay chipper and I make an effort.</p>
                     <br />

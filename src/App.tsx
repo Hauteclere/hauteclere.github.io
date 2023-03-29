@@ -5,8 +5,20 @@ import CVPage from "./pages/CV";
 import Navbar from "./components/Nav";
 import faviconUrl from "/logo1/favicon.ico";
 import { ColourScheme } from "./assets/colours";
+import useColourStore from "./components/ColourScheme";
+import { useEffect } from "react";
+
+
 
 const App: React.FC = () => {
+
+  let setColourLightGreen = useColourStore((state) => state.changeToLightGreen)
+  let mainLight = useColourStore((state) => state.mainLight)
+  let mainDark = useColourStore((state) => (state.mainDark))
+
+  useEffect(() => {
+    setColourLightGreen()
+  }, [])  
 
   // Setting the favicon... 
   let link = document.getElementById("favicon") as HTMLLinkElement;
@@ -22,11 +34,11 @@ const App: React.FC = () => {
   if (!theBody) {
     theBody = document.createElement('body') as HTMLElement;
   }
-  theBody.style.backgroundColor = ColourScheme.mainLight;
+  theBody.style.backgroundColor = mainLight;
 
   return ( 
   <HashRouter>
-    <Navbar extend={false}/>
+    <Navbar backgroundColour={mainDark} extend={false}/>
     <Routes>
       <Route path='/' element={<HomePage/>} />
       <Route path='projects' element={<ProjectsPage />} />

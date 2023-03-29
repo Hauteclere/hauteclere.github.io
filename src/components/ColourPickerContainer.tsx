@@ -1,15 +1,13 @@
 import styled from "styled-components";
+import { ColourScheme } from "../assets/colours";
 
-
-const ThreeColumns = styled('div')`
-    display: flex;
+const ColourPickerContainer = styled('div')`
     flex-direction: row;
-    margin: auto;
     padding: 10px;
     max-width: 1200px;
     flex-grow: 1;
     width: 0px;
-    min-height: 200px;
     min-width: 306px;
 `
-export default ThreeColumns;
+
+export default ColourPickerContainer

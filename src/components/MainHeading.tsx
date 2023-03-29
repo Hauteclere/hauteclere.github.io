@@ -1,12 +1,21 @@
 import styled from "styled-components";
 import { ColourScheme } from "../assets/colours"; 
+import useColourStore from "./ColourScheme";
 
 type HeadingProps = {
     text: string;
 };
 
-const StyledHeading = styled('h1')`
-    color: ${ColourScheme.highlightOnDark};
+type HeadingContainerProps = {
+    backgroundColour: string;
+}
+
+type StyledHeadingProps = {
+    colour: string;
+}
+
+const StyledHeading = styled('h1')<StyledHeadingProps>`
+    color: ${props => (props.colour)};
     text-align:center;
     min-width: 350px;
     font-size: calc(18px + 3vw);
@@ -22,8 +31,8 @@ const StyledHeading = styled('h1')`
     }
 `
 
-const HeadingContainer = styled('div')`
-    background-color: ${ColourScheme.mainDark};
+const HeadingContainer = styled('div')<HeadingContainerProps>`
+    background-color: ${props => (props.backgroundColour)};
     width: 100%;
     height: 50px;
     @media(max-width:700px){
@@ -40,10 +49,14 @@ const HeadingContainer = styled('div')`
     }
 `
 
-const MainHeading: React.FC<HeadingProps> = props => { 
+const MainHeading: React.FC<HeadingProps> = props => {
+    
+    let highlightOnDark = useColourStore((state) => state.highlightOnDark)
+    let mainDark = useColourStore((state) => state.mainDark)
+    
     return (
-        <HeadingContainer>
-            <StyledHeading>{props.text}</StyledHeading>
+        <HeadingContainer backgroundColour={mainDark}>
+            <StyledHeading colour={highlightOnDark}>{props.text}</StyledHeading>
         </HeadingContainer>
     )
 }

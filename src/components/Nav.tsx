@@ -2,10 +2,12 @@ import { useState, useEffect,} from "react";
 import { Link, useLocation, } from "react-router-dom";
 import styled from "styled-components";
 import { ColourScheme } from "../assets/colours"; 
+import useColourStore from "./ColourScheme";
 import logoUrl from "/logo1/logo1.png"
 
 type NavbarProps = {
-    extend: boolean;
+    extend: boolean,
+    backgroundColour: string
 };
 
 const NavbarContainer = styled("nav")<NavbarProps>`
@@ -13,7 +15,7 @@ const NavbarContainer = styled("nav")<NavbarProps>`
     height:${(props)=>(props.extend ? "100vh": "70px")};
     display: flex;
     flex-direction: row;
-    background-color: ${ColourScheme.mainDark};
+    background-color: ${(props) => (props.backgroundColour)};
     @media(min-width:701px){
         height: 12vw;
     }
@@ -35,15 +37,20 @@ const NavbarLinkContainer = styled.div`
     };
 `
 
-const NavbarLink = styled(Link)`
+type NavbarLinkProps = {
+    colour: string,
+    focuscolour: string
+}
+
+const NavbarLink = styled(Link)<NavbarLinkProps>`
     font-size: x-large;
     text-decoration: none;
     margin: 10px;
-    color: ${ColourScheme.mainLight};
+    color: ${(props) => (props.colour)};
     &:hover,
     &:active,
     &:focus{
-        color: ${ColourScheme.highlightOnDark};
+        color: ${(props) => (props.focuscolour)};
         text-decoration: underline;
     }
     @media(max-width: 700px) {
@@ -68,11 +75,11 @@ const NavbarImg = styled("img")`
 const ButtonImage = styled("img")<NavbarProps>`
     width: 50px;
     height: 50px; 
-    background-color: ${ColourScheme.mainDark};
+    background-color: ${(props) => (props.backgroundColour)};
     transform: rotate(${props => props.extend ? `-90deg` : `0deg`});
 `
 
-const ButtonLink = styled("button")<NavbarProps>`
+const ButtonLink = styled("button")`
     width: 50px;
     height: 70px;
     background-repeat: no-repeat;
@@ -89,12 +96,19 @@ const ButtonLink = styled("button")<NavbarProps>`
     align-items: end;
     justify-content: center;
 `
-const ButtonText = styled("p")`
-    background-color: ${ColourScheme.mainDark};
-    color: ${ColourScheme.mainLight};
+
+type ButtonTextProps = {
+    backgroundColour: string,
+    colour: string,
+    borderColour: string
+}
+
+const ButtonText = styled("p")<ButtonTextProps>`
+    background-color: ${(props) => (props.backgroundColour)};
+    color: ${(props) => (props.colour)};
     width: 50px;
     height: 20px;
-    border-color: ${ColourScheme.mainDark};
+    border-color: ${(props) => (props.borderColour)};
     border-width: 1px;
     border-style: solid;
 `
@@ -109,15 +123,15 @@ const ExtendedNavbar = styled("div")`
     }
 `
 
-const NavbarLinkExtended= styled(Link)`
+const NavbarLinkExtended= styled(Link)<NavbarLinkProps>`
     font-size: x-large;
     text-decoration: none;
     margin: 10px;
-    color: ${ColourScheme.mainLight};
+    color: ${(props) => (props.colour)};
     &:hover,
     &:active,
     &:focus{
-        color: ${ColourScheme.highlightOnLight};
+        color: ${(props) => (props.focuscolour)};
     }
 `
 
@@ -130,20 +144,24 @@ const Navbar: React.FC<NavbarProps> = props => {
         setExtendNavbar(false);
     }, [location]);
 
+    let mainDark = useColourStore(state => (state.mainDark))
+    let mainLight = useColourStore(state => (state.mainLight))
+    let highlightOnDark = useColourStore(state => (state.highlightOnDark))
+
     return (
-        <NavbarContainer extend={extendNavbar}>
-            <ButtonLink extend={extendNavbar} onClick={()=>{setExtendNavbar((curr)=> !curr)}} ><ButtonImage src={logoUrl} extend={extendNavbar} /><ButtonText>Menu</ButtonText></ButtonLink>
+        <NavbarContainer backgroundColour={mainDark} extend={extendNavbar}>
+            <ButtonLink onClick={()=>{setExtendNavbar((curr)=> !curr)}} ><ButtonImage backgroundColour={mainDark} src={logoUrl} extend={extendNavbar} /><ButtonText colour={mainLight} backgroundColour={mainDark} borderColour={mainDark}>Menu</ButtonText></ButtonLink>
             <NavbarImg src={logoUrl}/>
             <NavbarLinkContainer>
-                    <NavbarLink className="nav-link active" to="/">Home</NavbarLink>
-                    <NavbarLink className="nav-link" to="/projects">Projects</NavbarLink>
-                    <NavbarLink className="nav-link" to="/cv">My CV</NavbarLink>
+                    <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link active" to="/">Home</NavbarLink>
+                    <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/projects">Projects</NavbarLink>
+                    <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/cv">My CV</NavbarLink>
             </NavbarLinkContainer>
             {extendNavbar && (
                 <ExtendedNavbar>
-                    <NavbarLinkExtended className="nav-link active" to="/">Home</NavbarLinkExtended>
-                    <NavbarLinkExtended className="nav-link" to="/projects">Projects</NavbarLinkExtended>
-                    <NavbarLinkExtended className="nav-link" to="/cv">My CV</NavbarLinkExtended>
+                    <NavbarLinkExtended colour={mainLight} focuscolour={highlightOnDark} className="nav-link active" to="/">Home</NavbarLinkExtended>
+                    <NavbarLinkExtended colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/projects">Projects</NavbarLinkExtended>
+                    <NavbarLinkExtended colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/cv">My CV</NavbarLinkExtended>
                 </ExtendedNavbar>
             )}
         </NavbarContainer>

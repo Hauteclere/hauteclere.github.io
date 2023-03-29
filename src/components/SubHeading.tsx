@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import { ColourScheme } from "../assets/colours"; 
 
-const StyledSubHeading = styled('h2')`
-    color: ${ColourScheme.subheadingText};
+type StyledSubHeadingProps = {
+    colour: string
+}
+
+const StyledSubHeading = styled('h2')<StyledSubHeadingProps>`
+    color: ${props => (props.colour)};
     font-size: x-large;
 `
 
