@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ProjectsPage from "./pages/Projects";
 import CVPage from "./pages/CV";
@@ -25,14 +25,14 @@ const App: React.FC = () => {
   theBody.style.backgroundColor = ColourScheme.mainLight;
 
   return ( 
-  <BrowserRouter>
+  <HashRouter>
     <Navbar extend={false}/>
     <Routes>
       <Route path='/' element={<HomePage/>} />
       <Route path='projects' element={<ProjectsPage />} />
       <Route path='cv' element={<CVPage />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
   )
 }
 
