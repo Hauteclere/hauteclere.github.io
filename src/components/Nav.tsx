@@ -59,10 +59,29 @@ const NavbarLink = styled(Link)<NavbarLinkProps>`
     };
 `
 
-const NavbarImg = styled("img")`
-    padding: 1vw;
-    width: 12vw;
-    height: 12vw;
+type LogoProps = {
+    backgroundColour: string,
+    darkColour: string,
+    highlightColour: string,
+    height: string,
+    width: string,
+    padding: string,
+    extend: boolean,
+    wrapperColour: string
+}
+
+type LogoBoxProps = {
+    height: string,
+    width: string,
+    padding: string,
+    extend: boolean,
+    wrapperColour: string
+}
+
+const LogoWrapper = styled('div')<LogoBoxProps>`
+    height: ${props => props.width};
+    width: ${props => props.height};
+    padding: ${props => props.padding};
     @media(max-width: 700px) {
         display: none;
         width: 0vw;
@@ -70,12 +89,53 @@ const NavbarImg = styled("img")`
     };
 `
 
-const ButtonImage = styled("img")<NavbarProps>`
-    width: 50px;
-    height: 50px; 
-    background-color: ${(props) => (props.backgroundColour)};
+const ColouredLogo: React.FC<LogoProps> = props => {
+    return (
+        <LogoWrapper height={props.height} width={props.width} padding={props.padding} extend={false} wrapperColour={props.wrapperColour}>
+            <svg version="1.1" id="svg5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 200 200">
+                <defs id="defs2" />
+                <g id="layer1" >
+                <path fill={props.backgroundColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.264583" id="path141" transform="rotate(90)" d="m 200,-100.02923 a 100,100 0 0 1 -55.32548,89.495354 100,100 0 0 1 -104.781631,-9.54657" />
+                <path fill={props.darkColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.264583" id="path141-5" transform="rotate(-150)" d="M -37.320435,-24.641611 A 100,100 0 0 1 -86.60154,49.999425 100,100 0 0 1 -175.883,55.359656 l 39.28046,-91.962195 z" />
+                <path fill={props.backgroundColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.264583" id="path141-1" transform="rotate(-30)" d="M 135.88434,124.63908 A 100,100 0 0 1 91.701621,220.05367 100,100 0 0 1 -13.39895,223.20422 L 36.602539,136.60254 Z" />
+                <path fill={props.highlightColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.99996" stroke={props.highlightColour} strokeMiterlimit="4" strokeDasharray="none" strokeOpacity="1" id="path9821" d="m 258.72842,152.63949 -8.86421,15.35326 -8.86421,15.35327 -8.86421,-15.35327 -8.86421,-15.35326 17.72842,0 z" transform="matrix(4.3023589,0,0,4.9679381,-936.8685,-715.8196)" clipPath="none" />
+                </g>
+                <g id="layer2">
+                <rect fill={props.backgroundColour} fillOpacity="1" stroke="#00acab" strokeWidth="0" strokeMiterlimit="4" strokeDasharray="none" strokeOpacity="1" id="rect12155" width="108.48437" height="26.665998" x="45.444" y="93.333" />
+                <rect fill={props.darkColour} fillOpacity="1" stroke="#00acab" strokeWidth="0" strokeMiterlimit="4" strokeDasharray="none" strokeOpacity="1" id="rect12394" width="80" height="26.666" x="60" y="93.333" />
+                </g>
+            </svg>
+        </LogoWrapper>
+    )
+}
+
+const ButtonImageWrapper = styled('div')<LogoBoxProps>`
+    height: ${props => props.width};
+    width: ${props => props.height};
+    padding: ${props => props.padding};
     transform: rotate(${props => props.extend ? `-90deg` : `0deg`});
+    background-color: ${props => props.wrapperColour};
 `
+
+const ButtonImage: React.FC<LogoProps> = props => {
+    return (
+        <ButtonImageWrapper height={props.height} width={props.width} padding={props.padding} extend={props.extend} wrapperColour={props.wrapperColour}>
+            <svg version="1.1" id="svg5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 200 200">
+                <defs id="defs2" />
+                <g id="layer1" >
+                <path fill={props.backgroundColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.264583" id="path141" transform="rotate(90)" d="m 200,-100.02923 a 100,100 0 0 1 -55.32548,89.495354 100,100 0 0 1 -104.781631,-9.54657" />
+                <path fill={props.darkColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.264583" id="path141-5" transform="rotate(-150)" d="M -37.320435,-24.641611 A 100,100 0 0 1 -86.60154,49.999425 100,100 0 0 1 -175.883,55.359656 l 39.28046,-91.962195 z" />
+                <path fill={props.backgroundColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.264583" id="path141-1" transform="rotate(-30)" d="M 135.88434,124.63908 A 100,100 0 0 1 91.701621,220.05367 100,100 0 0 1 -13.39895,223.20422 L 36.602539,136.60254 Z" />
+                <path fill={props.highlightColour} fillOpacity="1" fillRule="evenodd" strokeWidth="0.99996" stroke={props.highlightColour} strokeMiterlimit="4" strokeDasharray="none" strokeOpacity="1" id="path9821" d="m 258.72842,152.63949 -8.86421,15.35326 -8.86421,15.35327 -8.86421,-15.35327 -8.86421,-15.35326 17.72842,0 z" transform="matrix(4.3023589,0,0,4.9679381,-936.8685,-715.8196)" clipPath="none" />
+                </g>
+                <g id="layer2">
+                <rect fill={props.backgroundColour} fillOpacity="1" stroke="#00acab" strokeWidth="0" strokeMiterlimit="4" strokeDasharray="none" strokeOpacity="1" id="rect12155" width="108.48437" height="26.665998" x="45.444" y="93.333" />
+                <rect fill={props.darkColour} fillOpacity="1" stroke="#00acab" strokeWidth="0" strokeMiterlimit="4" strokeDasharray="none" strokeOpacity="1" id="rect12394" width="80" height="26.666" x="60" y="93.333" />
+                </g>
+            </svg>
+        </ButtonImageWrapper>
+    )
+}
 
 const ButtonLink = styled("button")`
     width: 50px;
@@ -145,12 +205,11 @@ const Navbar: React.FC<NavbarProps> = props => {
     let mainDark = useColourStore(state => (state.mainDark))
     let mainLight = useColourStore(state => (state.mainLight))
     let highlightOnDark = useColourStore(state => (state.highlightOnDark))
-    let logoUrl = useColourStore(state => state.logoUrl)
 
     return (
         <NavbarContainer backgroundColour={mainDark} extend={extendNavbar}>
-            <ButtonLink onClick={()=>{setExtendNavbar((curr)=> !curr)}} ><ButtonImage backgroundColour={mainDark} src={logoUrl} extend={extendNavbar} /><ButtonText colour={mainLight} backgroundColour={mainDark} borderColour={mainDark}>Menu</ButtonText></ButtonLink>
-            <NavbarImg src={logoUrl}/>
+            <ButtonLink onClick={()=>{setExtendNavbar((curr)=> !curr)}} ><ButtonImage backgroundColour="#086375" darkColour="#3c1642" highlightColour="#affc41" height="50px" width="50px" padding="0px" extend={extendNavbar} wrapperColour={mainDark}/><ButtonText colour={mainLight} backgroundColour={mainDark} borderColour={mainDark}>Menu</ButtonText></ButtonLink>
+            <ColouredLogo backgroundColour="#086375" darkColour="#3c1642" highlightColour="#affc41" height="12vw" width="12vw" padding="1vw" extend={false} wrapperColour="none"/>
             <NavbarLinkContainer>
                     <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link active" to="/">Home</NavbarLink>
                     <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/projects">Projects</NavbarLink>
