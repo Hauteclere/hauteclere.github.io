@@ -14,11 +14,11 @@ import ThreeColumns from "../components/ThreeColumns";
 import LogoJumble from "../components/LogoJumble";
 import ThirdPartyLogo from "../components/ThirdPartyLogo";
 import ImageWrapper from '../components/ImageWrapper';
-import ColourPickerContainer from '../components/ColourPickerContainer';
 import useColourStore from '../components/ColourScheme';
 import ColourSchemeButton from '../components/ColourSchemeButton';
 import { ColourScheme } from '../assets/colours';
 import ColourButtonContainer from '../components/ColourButtonContainer';
+import StyledH3 from '../components/h3';
 
 import pythonLogo from "/third_party_logos/webdev/python-logo-only.svg";
 import djangoLogo from "/third_party_logos/webdev/django-logo-negative.png";
@@ -79,16 +79,17 @@ const HomePage: React.FC<HomePageProps> = props => {
                         <StyledSubHeading colour={subheadingText}>Hi!</StyledSubHeading>
                         <StyledPara>I'm Oliver.</StyledPara>
                         <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
-                        <StyledPara>This is my portfolio website. Have a read about me, or look at the "Projects" page to see what I've been up to, or just... </StyledPara>
+                        <StyledPara>This is my portfolio website. Have a read about me, look at the "Projects" page to see what I've been up to, or just... </StyledPara>
                         <br />
-                        <StyledSubHeading colour={subheadingText}>Check out this fun colour scheme picker:</StyledSubHeading>
+                        <StyledH3 colour={subheadingText}>Check out this fun colour scheme picker:</StyledH3>
+                        <StyledPara>Yep, I couldn't settle on one so I am offloading the work onto you.</StyledPara>
                         <ColourButtonContainer>
-                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightBlue.highlightOnLight} background={ColourScheme.lightBlue.mainLight} foreground={ColourScheme.lightBlue.highlightOnLight} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightGreen.highlightOnLight} background={ColourScheme.lightGreen.mainLight} foreground={ColourScheme.lightGreen.highlightOnLight} onClick={changeToLightGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightRed.highlightOnLight} background={ColourScheme.lightRed.mainLight} foreground={ColourScheme.lightRed.highlightOnLight} onClick={changeToLightRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkRed.highlightOnLight} background={ColourScheme.darkRed.mainLight} foreground={ColourScheme.darkRed.highlightOnLight} onClick={changeToDarkRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkGreen.highlightOnLight} background={ColourScheme.darkGreen.mainLight} foreground={ColourScheme.darkGreen.highlightOnLight} onClick={changeToDarkGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
-                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkBlue.highlightOnLight} background={ColourScheme.darkBlue.mainLight} foreground={ColourScheme.darkBlue.highlightOnLight} onClick={changeToDarkBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightBlue.highlightOnLight} background={ColourScheme.lightBlue.mainDark} foreground={ColourScheme.lightBlue.highlightOnDark} onClick={changeToLightBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightGreen.highlightOnLight} background={ColourScheme.lightGreen.logoBackground} foreground={ColourScheme.lightGreen.mainLight} onClick={changeToLightGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.lightRed.highlightOnLight} background={ColourScheme.lightRed.mainLight} foreground={ColourScheme.lightRed.logoForeground} onClick={changeToLightRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkRed.highlightOnLight} background={ColourScheme.darkRed.mainDark} foreground={ColourScheme.darkRed.mainLight} onClick={changeToDarkRed}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkGreen.highlightOnLight} background={ColourScheme.darkGreen.mainLight} foreground={ColourScheme.darkGreen.logoForeground} onClick={changeToDarkGreen}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
+                            <ColourSchemeButton highlight={highlightOnLight===ColourScheme.darkBlue.highlightOnLight} background={ColourScheme.darkBlue.mainDark} foreground={ColourScheme.darkBlue.mainLight} onClick={changeToDarkBlue}><FontAwesomeIcon icon={faHeart} /></ColourSchemeButton>
                         </ColourButtonContainer>
                     </StyledSection>
                 </ThreeColumns>
@@ -208,10 +209,8 @@ const HomePage: React.FC<HomePageProps> = props => {
                 <ThreeColumns>
                 <StyledSection>
                     <StyledSubHeading colour={subheadingText}>Occasionally Tragic</StyledSubHeading>
-                    <br />
-                    <p>But I stay chipper and I make an effort.</p>
-                    <br />
-                </StyledSection>
+                    <StyledPara>Who made me like this? No idea. Have some whitespace while you ponder it; it looks bad if the section isn't tall enough.</StyledPara> 
+                    </StyledSection>
                 </ThreeColumns>
             </SideBySide>
         </StyledBody>

@@ -116,14 +116,14 @@ const htmlCode = `
 
 const ProjectsPage: React.FC<ProjectsPageProps> = props => {
 
-    let highlightOnLight = useColourStore(state => (state.highlightOnLight))
+    let subheadingText = useColourStore(state => state.subheadingText)
 
     return (
         <StyledBody>
             <MainHeading text="My Work"></MainHeading>
             <StyledSectionContainer>
                 <StyledSection>
-                    <StyledSubHeading colour={highlightOnLight}>Phractal</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Phractal</StyledSubHeading>
                     <br/>
                     <StytledUL>
                         <li><FontAwesomeIcon icon={faLink} /> <a href="https://pypi.org/project/Phractal/">Pypi</a></li>
@@ -151,7 +151,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
                     And the output of both:
                     <SideBySide reverse={false}>
                     <StyledCodeContent titletext="HTML" language="html" codecontent={htmlCode} />
-                    <StyledOutputBlock bordercolour={highlightOnLight}>
+                    <StyledOutputBlock bordercolour={subheadingText}>
                         <h1>My List</h1>
                         <ul>
                             <li>beans</li>
@@ -164,19 +164,19 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <StyledSubHeading colour={highlightOnLight}>Data Analysis</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Data Analysis</StyledSubHeading>
                     I work full-time as a data analyst.
                 </StyledSection>
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <StyledSubHeading colour={highlightOnLight}>Web Development</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>Web Development</StyledSubHeading>
                     I'm a full-stack dev with five years experience.
                 </StyledSection>
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <StyledSubHeading colour={highlightOnLight}>She Codes</StyledSubHeading>
+                    <StyledSubHeading colour={subheadingText}>She Codes</StyledSubHeading>
                     I am a mentor.
                 </StyledSection>
             </StyledSectionContainer>
