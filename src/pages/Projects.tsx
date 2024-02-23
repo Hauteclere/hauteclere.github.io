@@ -164,20 +164,8 @@ const ProjectsPage: React.FC<ProjectsPageProps> = props => {
             </StyledSectionContainer>
             <StyledSectionContainer>
                 <StyledSection>
-                    <StyledSubHeading colour={subheadingText}>Data Analysis</StyledSubHeading>
-                    I work full-time as a data analyst.
-                </StyledSection>
-            </StyledSectionContainer>
-            <StyledSectionContainer>
-                <StyledSection>
-                    <StyledSubHeading colour={subheadingText}>Web Development</StyledSubHeading>
-                    I'm a full-stack dev with five years experience.
-                </StyledSection>
-            </StyledSectionContainer>
-            <StyledSectionContainer>
-                <StyledSection>
-                    <StyledSubHeading colour={subheadingText}>She Codes</StyledSubHeading>
-                    I am a mentor.
+                    <StyledSubHeading colour={subheadingText}>Other work</StyledSubHeading>
+                    Under construction...
                 </StyledSection>
             </StyledSectionContainer>
         </StyledBody>

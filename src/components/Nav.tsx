@@ -224,13 +224,11 @@ const Navbar: React.FC<NavbarProps> = props => {
             <NavbarLinkContainer>
                     <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link active" to="/">Home</NavbarLink>
                     <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/projects">Projects</NavbarLink>
-                    <NavbarLink colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/cv">My CV</NavbarLink>
             </NavbarLinkContainer>
             {extendNavbar && (
                 <ExtendedNavbar>
                     <NavbarLinkExtended colour={mainLight} focuscolour={highlightOnDark} className="nav-link active" to="/">Home</NavbarLinkExtended>
                     <NavbarLinkExtended colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/projects">Projects</NavbarLinkExtended>
-                    <NavbarLinkExtended colour={mainLight} focuscolour={highlightOnDark} className="nav-link" to="/cv">My CV</NavbarLinkExtended>
                 </ExtendedNavbar>
             )}
         </NavbarContainer>
