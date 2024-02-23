@@ -79,7 +79,7 @@ const HomePage: React.FC<HomePageProps> = props => {
                         <StyledSubHeading colour={subheadingText}>Hi!</StyledSubHeading>
                         <StyledPara>I'm Oliver.</StyledPara>
                         <StyledPara>I'm a developer, data analyst, mentor, rock climber, and star gazer based in Meanjin. </StyledPara>
-                        <StyledPara>This is my portfolio website. Have a read about me, look at the "Projects" page to see what I've been up to, or just... </StyledPara>
+                        <StyledPara>This is my portfolio website. Have a read about me, look at the <a href="https://hauteclere.github.io/#/projects">"Projects"</a> page to see what I've been up to, or just... </StyledPara>
                         <br />
                         <StyledH3 colour={subheadingText}>Check out this fun colour scheme picker:</StyledH3>
                         <StyledPara>Yep, I couldn't settle on one so I am offloading the work onto you.</StyledPara>
